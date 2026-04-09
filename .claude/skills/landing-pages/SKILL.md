@@ -73,7 +73,7 @@ Toda LP DEVE incluir o sistema de tracking completo. Consultar `tracking-gtm/SKI
 ```
 
 ### Para clientes — usar branding do cliente
-Ler `clientes/{slug}/branding.json` antes de criar a LP. Cores, fontes e tom de voz vêm de lá.
+Ler `qg/clientes/{slug}/branding.json` antes de criar a LP. Cores, fontes e tom de voz vêm de lá.
 
 ---
 

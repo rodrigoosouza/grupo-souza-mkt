@@ -38,28 +38,47 @@ e AIEO/GEO (otimizacao para busca generativa).
 
 ```
 Grupo Souza/
-├── CLAUDE.md                    # Este arquivo — instrucoes do projeto
-├── README.md                    # Visao geral
-├── .claude/
-│   ├── skills/
-│   │   ├── tracking-gtm/        # Tracking padronizado (27 campos ocultos + GTM)
-│   │   ├── aieo-geo/            # Otimizacao para busca generativa (IA)
-│   │   ├── landing-pages/       # LPs com CRO + tracking integrado
-│   │   ├── email-marketing/     # Sequencias, automacoes, templates
-│   │   └── onboarding-cliente/  # Processo de entrada de novo cliente
-│   └── plans/                   # Planos estrategicos
-├── docs/
-│   ├── estrategia/              # Missao, visao, SWOT, ICP, posicionamento
-│   ├── marca/                   # Cores, tipografia, brand voice, guia visual
-│   ├── servicos/                # Catalogo, pacotes, precificacao, SLA
-│   ├── comercial/               # Funil de vendas, proposta, contrato
-│   ├── operacao/                # Jornada do cliente, playbooks por servico
-│   └── financeiro/              # Modelo de receita, projecao, capacidade
-├── assets/
-│   ├── logos/                   # Logos do Grupo Souza
-│   └── brand/                   # Assets visuais da marca
-└── clientes/
-    └── _template/               # Template de contexto para novos clientes
+├── CLAUDE.md                    # Instrucoes do projeto (este arquivo)
+├── README.md                    # Mapa rapido — onde fazer o que
+│
+├── .claude/                     # Skills e config do Claude Code
+│   └── skills/
+│       ├── blog-grupo-souza/    # Skill pra gerar artigos do blog
+│       ├── aieo-geo/            # Otimizacao pra busca generativa (IA)
+│       ├── tracking-gtm/        # Tracking padronizado + GTM
+│       ├── landing-pages/       # LPs com CRO + tracking integrado
+│       ├── email-marketing/     # Sequencias, automacoes, templates
+│       ├── sites-blog/          # Sites com blog markdown ou CMS
+│       └── onboarding-cliente/  # Processo de entrada de novo cliente
+│
+├── qg/                          # QG estrategico do Grupo Souza
+│   ├── assets/
+│   │   ├── logos/               # Logos do Grupo Souza
+│   │   └── brand/               # Assets visuais da marca
+│   ├── clientes/
+│   │   └── _template/           # Template de contexto pra novos clientes
+│   └── docs/
+│       ├── estrategia/          # Missao, visao, SWOT, ICP, posicionamento
+│       ├── marca/               # Cores, tipografia, brand voice, guia visual
+│       ├── servicos/            # Catalogo, pacotes, precificacao, SLA
+│       ├── comercial/           # Funil de vendas, proposta, contrato
+│       ├── operacao/            # Jornada do cliente, playbooks por servico
+│       └── financeiro/          # Modelo de receita, projecao, capacidade
+│
+├── referencias/                 # Materiais de estudo (nao versionar mudancas)
+│   ├── cms-blog/                # Doc do CMS de blog (referencia tecnica)
+│   ├── aieo-geo-skill/          # Versao original da skill AIEO/GEO
+│   ├── instagram-slides/        # Templates de slides
+│   ├── sidebar/                 # Mockups de sidebar
+│   └── *.aura.build/            # Outras referencias visuais
+│
+└── site-grupo-souza/            # SITE PRODUCAO (Next.js + CF Pages)
+    ├── app/                     # Rotas Next 16 (App Router)
+    ├── components/              # Componentes React
+    ├── content/blog/            # Artigos do blog em markdown
+    ├── lib/                     # Helpers (blog parser, toc, tracking)
+    ├── public/blog/             # IMAGENS DE CAPA dos artigos (cover)
+    └── scripts/new-post.mjs     # `pnpm new-post "Titulo"` cria artigo
 ```
 
 ## Convencoes

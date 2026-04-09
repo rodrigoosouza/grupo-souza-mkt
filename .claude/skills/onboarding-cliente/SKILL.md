@@ -6,7 +6,7 @@
 
 ## Visão Geral
 
-Processo padronizado de entrada de um novo cliente na agência. Do contrato assinado ao setup técnico completo. Referência: `docs/operacao/jornada-do-cliente.md`.
+Processo padronizado de entrada de um novo cliente na agência. Do contrato assinado ao setup técnico completo. Referência: `qg/docs/operacao/jornada-do-cliente.md`.
 
 ---
 
@@ -22,7 +22,7 @@ clientes/{slug}/
   historico-decisoes.md
 ```
 
-Usar o template em `clientes/_template/` como base.
+Usar o template em `qg/clientes/_template/` como base.
 
 **Slug:** lowercase, hifens. Ex: `minha-empresa`, `clinica-odonto`.
 
@@ -94,7 +94,7 @@ Preencher durante ou após o kickoff. Todas as respostas vão para `contexto.md`
 ### 5. Preencher Arquivos do Cliente
 
 #### contexto.md
-Usar template de `clientes/_template/contexto.md`. Preencher com as respostas do questionário.
+Usar template de `qg/clientes/_template/contexto.md`. Preencher com as respostas do questionário.
 
 #### branding.json
 ```json
@@ -116,7 +116,7 @@ Usar template de `clientes/_template/contexto.md`. Preencher com as respostas do
     "descricao": "Como o cliente quer que a marca soe"
   },
   "palavras_proibidas": ["palavra1", "palavra2"],
-  "logo_url": "/assets/clientes/slug/logo.png"
+  "logo_url": "/qg/assets/clientes/slug/logo.png"
 }
 ```
 
@@ -165,7 +165,7 @@ Conforme o pacote contratado:
 ## Checklist Completo de Onboarding
 
 ### Documentação
-- [ ] Pasta `clientes/{slug}/` criada
+- [ ] Pasta `qg/clientes/{slug}/` criada
 - [ ] `contexto.md` preenchido
 - [ ] `branding.json` preenchido
 - [ ] `historico-decisoes.md` iniciado

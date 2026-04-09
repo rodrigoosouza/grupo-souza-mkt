@@ -1,39 +1,98 @@
 # Grupo Souza MKT
 
-Agencia de growth marketing e infraestrutura de aquisicao.
+Agencia de growth marketing e infraestrutura de aquisicao. Este repo e o **QG estrategico** + o **site institucional**.
 
-## O que e este projeto
+---
 
-QG estrategico do Grupo Souza MKT. Centraliza posicionamento, identidade de marca,
-processos operacionais, skills do Claude, e contexto estrategico de cada cliente.
+## 🗺️ Mapa rapido — onde fazer o que
 
-## Como usar
+| Quero... | Vai em |
+|---|---|
+| **Escrever artigo do blog** | `site-grupo-souza/content/blog/{slug}.md` (use `pnpm new-post`) |
+| **Adicionar imagem de capa de artigo** | `site-grupo-souza/public/blog/{slug}-cover.jpg` (16:9, ≤200KB) |
+| **Editar pagina do site** | `site-grupo-souza/app/{rota}/page.tsx` |
+| **Editar componente de secao** | `site-grupo-souza/components/sections/` |
+| **Atualizar servico/pacote** | `site-grupo-souza/content/services/index.ts` |
+| **Adicionar contexto de cliente novo** | `qg/clientes/{slug-cliente}/` (copie `_template`) |
+| **Editar posicionamento, ICP, SWOT** | `qg/docs/estrategia/` |
+| **Editar brand voice, cores, tipografia** | `qg/docs/marca/` |
+| **Catalogo de servicos / precificacao** | `qg/docs/servicos/` |
+| **Funil de vendas, proposta, contrato** | `qg/docs/comercial/` |
+| **Logos e assets visuais** | `qg/assets/` |
+| **Criar skill nova pro Claude** | `.claude/skills/{nome}/SKILL.md` |
+| **Estudar referencias de arquitetura** | `referencias/` |
 
-1. Abrir este projeto no Claude (Cowork ou Claude Code)
-2. O Claude le o `CLAUDE.md` automaticamente e sabe como operar
-3. Para trabalhar com um cliente, o Claude le `clientes/{slug}/` antes de qualquer entrega
-4. Skills em `.claude/skills/` automatizam entregas padronizadas
+---
 
-## Estrutura
+## 📁 Estrutura
 
-| Pasta | Conteudo |
-|-------|---------|
-| `docs/estrategia/` | Missao, visao, SWOT, ICP, posicionamento |
-| `docs/marca/` | Paleta de cores, tipografia, brand voice |
-| `docs/servicos/` | Catalogo, pacotes, precificacao, SLA |
-| `docs/comercial/` | Funil de vendas, proposta, contrato |
-| `docs/operacao/` | Jornada do cliente, playbooks |
-| `docs/financeiro/` | Modelo de receita, projecao, capacidade |
-| `assets/` | Logos e assets visuais |
-| `clientes/` | Contexto estrategico por cliente |
-| `.claude/skills/` | Skills para entregas padronizadas |
+```
+Grupo Souza/
+├── CLAUDE.md                # Instrucoes do projeto pro Claude
+├── README.md                # Este arquivo
+│
+├── .claude/skills/          # Skills automatizadas (blog, AIEO, tracking, etc)
+│
+├── qg/                      # QG estrategico
+│   ├── assets/              # Logos, brand
+│   ├── clientes/            # Contexto por cliente
+│   └── docs/                # Estrategia, marca, servicos, comercial, etc
+│
+├── referencias/             # Materiais de estudo (CMS, slides, mockups)
+│
+└── site-grupo-souza/        # SITE PRODUCAO (Next.js + Cloudflare Pages)
+    ├── app/                 # Rotas
+    ├── components/          # Componentes React
+    ├── content/blog/        # Artigos em markdown
+    ├── public/blog/         # IMAGENS DE CAPA dos artigos
+    └── scripts/new-post.mjs # CLI: pnpm new-post "Titulo"
+```
 
-## Ecossistema
+---
 
-Este projeto se conecta com:
-- **plataforma-email** — SaaS de email marketing (leads, disparos, tracking, dashboards)
-- **maquina-producao** — Pipeline de video/conteudo por IA
-- **ClickUp** — Gestao de tarefas e processos
-- **Make/n8n** — Automacoes
-- **Supabase** — Backend e banco de dados
-- **Vercel** — Deploy de sites e LPs
+## ✍️ Workflow de blog
+
+### 1. Criar artigo novo
+```bash
+cd site-grupo-souza
+pnpm new-post "Como otimizar campanhas de Google Ads em 2026"
+# ou com categoria
+pnpm new-post "..." --category=trafego-pago
+```
+Cria `content/blog/{slug}.md` com frontmatter completo + estrutura de exemplo.
+
+### 2. Pedir pro Claude escrever
+> "Escreve um artigo sobre [tema X]"
+
+A skill `blog-grupo-souza` ativa automaticamente: produz 3.500-4.500 palavras com TL;DR, definicao, contexto, beneficios, caso pratico, erros comuns, FAQ, comparativo, conclusao e CTA. Frontmatter completo, links internos/externos, lead magnet custom.
+
+### 3. Adicionar imagem de capa
+- Custom: cole o arquivo em `site-grupo-souza/public/blog/{slug}-cover.jpg` (16:9, ≤200KB)
+- Sem custom: o site usa automaticamente a OG image dinamica gerada (1200×630 com titulo + categoria + autor)
+
+### 4. Publicar
+- Mude `status: draft` pra `status: published` no frontmatter
+- `git add . && git commit -m "post: titulo" && git push`
+- Cloudflare Pages rebuilda automaticamente
+
+---
+
+## 🔌 Ecossistema externo
+
+| Ferramenta | Funcao |
+|---|---|
+| **Cloudflare Pages** | Hosting do site (static export) |
+| **Supabase** | Backend de leads, forms, dashboards |
+| **GTM + GA4** | Tracking avancado das proprias campanhas |
+| **Make / n8n** | Automacoes (CRM, leads, emails) |
+| **ClickUp** | Gestao de tarefas |
+| **Figma** | Design |
+| **Claude** | Skills de produto, conteudo, estrategia |
+
+---
+
+## 🏢 Posicionamento
+
+Construimos a infraestrutura de aquisicao: o sistema que faz o lead chegar, ser rastreado, ser nutrido e entregue ao comercial com contexto. Com inteligencia de dados e processos automatizados (incluindo IA), entregamos com eficiencia o que equipes maiores demoram pra montar.
+
+**Ticket minimo:** R$ 2.500/mes (fee) + verba de midia separada.
