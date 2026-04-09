@@ -158,6 +158,47 @@ export function getRelatedPosts(
   return [...sameCategory, ...others].slice(0, limit);
 }
 
+// === Paginacao ===
+
+export const POSTS_PER_PAGE = 12;
+
+export interface PaginatedResult {
+  posts: BlogPost[];
+  currentPage: number;
+  totalPages: number;
+  totalPosts: number;
+  hasPrev: boolean;
+  hasNext: boolean;
+}
+
+export function paginatePosts(
+  allPosts: BlogPost[],
+  page: number,
+  perPage: number = POSTS_PER_PAGE
+): PaginatedResult {
+  const totalPosts = allPosts.length;
+  const totalPages = Math.max(1, Math.ceil(totalPosts / perPage));
+  const currentPage = Math.min(Math.max(1, page), totalPages);
+  const start = (currentPage - 1) * perPage;
+  const end = start + perPage;
+  return {
+    posts: allPosts.slice(start, end),
+    currentPage,
+    totalPages,
+    totalPosts,
+    hasPrev: currentPage > 1,
+    hasNext: currentPage < totalPages,
+  };
+}
+
+/** Numero total de paginas pra um conjunto de posts. Usado em generateStaticParams. */
+export function getTotalPages(
+  posts: BlogPost[],
+  perPage: number = POSTS_PER_PAGE
+): number {
+  return Math.max(1, Math.ceil(posts.length / perPage));
+}
+
 export const CATEGORY_LABELS: Record<string, string> = {
   "trafego-pago": "Tráfego Pago",
   "tracking-dados": "Tracking & Dados",
