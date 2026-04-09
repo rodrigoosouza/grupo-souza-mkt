@@ -3,6 +3,25 @@ import path from "path";
 import matter from "gray-matter";
 
 const BLOG_DIR = path.join(process.cwd(), "content/blog");
+const PUBLIC_DIR = path.join(process.cwd(), "public");
+
+/**
+ * Cache-bust pra imagens locais. Adiciona ?v={mtime} a URLs que apontam pra
+ * arquivos em public/. Resolve cache de browser/CDN quando a imagem e
+ * sobrescrita mantendo o mesmo nome.
+ */
+function withCacheBust(url: string | undefined): string | undefined {
+  if (!url || !url.startsWith("/")) return url;
+  if (url.includes("?")) return url; // ja tem query
+  try {
+    const filePath = path.join(PUBLIC_DIR, url);
+    if (!fs.existsSync(filePath)) return url;
+    const mtime = Math.floor(fs.statSync(filePath).mtimeMs);
+    return `${url}?v=${mtime}`;
+  } catch {
+    return url;
+  }
+}
 
 export interface BlogFAQ {
   question: string;
@@ -89,7 +108,7 @@ export function getAllPosts(): BlogPost[] {
         category: data.category ?? "",
         tags: Array.isArray(data.tags) ? data.tags : [],
         author: data.author ?? "",
-        cover: data.cover ?? undefined,
+        cover: withCacheBust(data.cover),
         cover_alt: data.cover_alt ?? undefined,
         seo_title: data.seo_title ?? data.title ?? "",
         seo_description: data.seo_description ?? data.excerpt ?? "",
