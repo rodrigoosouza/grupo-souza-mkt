@@ -229,6 +229,13 @@ export default async function BlogPostPage({
             </div>
           </header>
 
+          {/* TOC inline */}
+          {toc.length >= 3 && (
+            <div className="[animation:animationIn_0.8s_ease-out_0.25s_both] animate-on-scroll mb-12">
+              <TableOfContents items={toc} />
+            </div>
+          )}
+
           {/* Content */}
           <div className="prose prose-invert prose-emerald max-w-none [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll prose-headings:font-bold prose-headings:tracking-tight prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-gray-300 prose-p:leading-relaxed prose-strong:text-white prose-li:text-gray-300 prose-a:text-emerald-400 prose-a:no-underline hover:prose-a:underline prose-hr:border-white/[0.06]">
             <MDXRemote source={post.content} components={mdxComponents} />
@@ -261,11 +268,10 @@ export default async function BlogPostPage({
           </div>
           </div>
 
-          {/* Sticky sidebar: lead magnet + TOC abaixo (desktop only) */}
+          {/* Sticky sidebar: lead magnet (desktop only) */}
           <aside className="hidden lg:block">
-            <div className="sticky top-32 space-y-6 [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll max-h-[calc(100vh-9rem)] overflow-y-auto pr-1">
+            <div className="sticky top-32 [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll">
               <StickyLeadMagnet magnet={leadMagnet} />
-              {toc.length >= 3 && <TableOfContents items={toc} />}
             </div>
           </aside>
         </div>
