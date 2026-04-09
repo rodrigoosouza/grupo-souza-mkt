@@ -102,9 +102,10 @@ console.log(`   → ${destFilename}`);
 console.log("");
 
 try {
-  // sips: redimensiona pra max 1600px (preserva ratio), converte pra JPEG, qualidade 82
+  // sips: redimensiona pra max 1500px (preserva ratio), converte pra JPEG, qualidade 75
+  // (sweet spot LCP: ~150-250KB pra hero image em 16:9)
   execSync(
-    `sips -Z 1600 --setProperty format jpeg --setProperty formatOptions 82 "${absSource}" --out "${tmpPath}"`,
+    `sips -Z 1500 --setProperty format jpeg --setProperty formatOptions 75 "${absSource}" --out "${tmpPath}"`,
     { stdio: "pipe" }
   );
 
