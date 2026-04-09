@@ -16,6 +16,7 @@ import {
   Mail,
   ArrowRight,
 } from "lucide-react";
+import { Logo } from "@/components/brand/logo";
 
 const SERVICE_LINKS = [
   { label: "Tráfego Pago", href: "/servicos/trafego-pago", icon: Megaphone, desc: "Google Ads & Meta Ads" },
@@ -29,6 +30,7 @@ const SERVICE_LINKS = [
 ];
 
 const NAV_LINKS = [
+  { label: "Histórias", href: "/historias" },
   { label: "Blog", href: "/blog" },
   { label: "Sobre", href: "/sobre" },
   { label: "Contato", href: "/contato" },
@@ -36,6 +38,7 @@ const NAV_LINKS = [
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -59,14 +62,7 @@ export function Navbar() {
       <nav className="sticky top-0 z-50 bg-black/60 backdrop-blur-2xl border-b border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-            <span className="text-xl font-bold tracking-tight">
-              GRUPO{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-500">
-                SOUZA
-              </span>
-            </span>
-          </Link>
+          <Logo size={32} />
 
           {/* Center nav — pill style (Luminous reference) */}
           <div className="hidden lg:flex items-center bg-white/[0.04] border border-white/[0.08] rounded-full px-1.5 py-1.5 backdrop-blur-md">
@@ -180,39 +176,68 @@ export function Navbar() {
       {mobileOpen && (
         <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-2xl lg:hidden overflow-y-auto pt-20">
           <div className="px-6 py-8">
-            <div className="mb-4">
-              <span className="text-[10px] font-bold text-emerald-500 uppercase tracking-[3px] font-mono">
-                Serviços
-              </span>
-            </div>
-            <div className="grid grid-cols-2 gap-2.5 mb-10">
-              {SERVICE_LINKS.map((service) => (
+            {/* Servicos como dropdown collapsible */}
+            <button
+              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+              className="w-full flex items-center justify-between px-4 py-4 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] transition-all mb-2"
+            >
+              <span className="text-base font-medium text-white">Serviços</span>
+              <ChevronDown
+                className={`w-5 h-5 text-neutral-400 transition-transform duration-300 ${
+                  mobileServicesOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {/* Dropdown servicos expandido */}
+            <div
+              className={`overflow-hidden transition-all duration-300 ${
+                mobileServicesOpen ? "max-h-[1200px] opacity-100 mb-4" : "max-h-0 opacity-0"
+              }`}
+            >
+              <div className="space-y-1.5 pl-2 pt-2">
+                {SERVICE_LINKS.map((service) => (
+                  <Link
+                    key={service.href}
+                    href={service.href}
+                    onClick={() => {
+                      setMobileOpen(false);
+                      setMobileServicesOpen(false);
+                    }}
+                    className="flex items-center gap-3 p-3 rounded-lg border border-white/[0.04] bg-white/[0.01] hover:bg-white/[0.04] hover:border-emerald-500/15 transition-all"
+                  >
+                    <div className="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                      <service.icon className="w-4 h-4 text-emerald-400" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-sm font-medium text-white">{service.label}</div>
+                      <div className="text-[10px] text-neutral-500 mt-0.5 truncate">
+                        {service.desc}
+                      </div>
+                    </div>
+                  </Link>
+                ))}
                 <Link
-                  key={service.href}
-                  href={service.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="flex flex-col gap-3 p-4 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] transition-colors"
+                  href="/servicos"
+                  onClick={() => {
+                    setMobileOpen(false);
+                    setMobileServicesOpen(false);
+                  }}
+                  className="flex items-center justify-center gap-1.5 p-3 mt-2 rounded-lg border border-emerald-500/20 bg-emerald-500/[0.05] text-sm text-emerald-400 hover:bg-emerald-500/10 transition-all"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
-                    <service.icon className="w-4 h-4 text-emerald-400" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-white">{service.label}</div>
-                    <div className="text-[10px] text-neutral-500 mt-0.5">{service.desc}</div>
-                  </div>
+                  Ver todos os serviços <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
-              ))}
+              </div>
             </div>
 
-            <div className="h-px bg-white/[0.06] mb-6" />
-
-            <div className="space-y-1 mb-10">
+            {/* Outros links */}
+            <div className="space-y-1 mt-4">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block px-2 py-3.5 text-lg font-medium text-neutral-300 hover:text-white transition-colors"
+                  className="block px-4 py-4 rounded-xl border border-white/[0.06] bg-white/[0.02] text-base font-medium text-white hover:bg-white/[0.04] transition-all"
                 >
                   {link.label}
                 </Link>
@@ -222,7 +247,7 @@ export function Navbar() {
             <Link
               href="/diagnostico"
               onClick={() => setMobileOpen(false)}
-              className="block w-full text-center text-base font-medium text-white bg-gradient-to-r from-emerald-600 to-emerald-500 rounded-xl py-4 shadow-[0_4px_20px_rgba(16,185,129,0.4)]"
+              className="block w-full text-center text-base font-medium text-white bg-gradient-to-r from-emerald-600 to-emerald-500 rounded-xl py-4 mt-6 shadow-[0_4px_20px_rgba(16,185,129,0.4)]"
             >
               Agendar diagnóstico
             </Link>

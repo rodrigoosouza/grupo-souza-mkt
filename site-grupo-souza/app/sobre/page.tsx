@@ -15,6 +15,8 @@ import {
   Cpu,
   Users,
   ArrowRight,
+  Compass,
+  Telescope,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -165,6 +167,66 @@ export default function SobrePage() {
                   <span className="text-xs text-neutral-300">{skill.label}</span>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Missão e Visão */}
+      <section className="max-w-7xl mx-2.5 lg:mx-auto mb-24 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Missão */}
+        <div className="[animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll relative rounded-3xl p-[1px] bg-gradient-to-br from-emerald-400/40 via-emerald-500/10 to-transparent shadow-[0_0_60px_-15px_rgba(16,185,129,0.25)]">
+          <div className="relative h-full rounded-3xl bg-gradient-to-br from-[#0B1410] via-[#070D0A] to-black p-8 md:p-10 overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/60 to-transparent" />
+            <div className="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/15 blur-[100px] rounded-full pointer-events-none" />
+            <div className="relative">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-emerald-500/30 blur-xl rounded-2xl" />
+                  <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-400/30 to-emerald-600/10 border border-emerald-400/40 flex items-center justify-center shadow-[0_0_30px_rgba(16,185,129,0.3)]">
+                    <Compass className="w-5 h-5 text-emerald-300" />
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-[3px] font-mono text-emerald-500 font-bold">
+                    Missão
+                  </div>
+                  <div className="text-sm text-neutral-400">Por que existimos</div>
+                </div>
+              </div>
+              <p className="text-base md:text-lg text-neutral-200 leading-relaxed font-sans">
+                Construir a infraestrutura de aquisição que empresas precisam
+                pra crescer com previsibilidade — conectando tráfego, dados e
+                automação em um sistema que gera leads qualificados e entrega
+                resultados mensuráveis.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Visão */}
+        <div className="[animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll relative rounded-3xl p-[1px] bg-gradient-to-br from-white/[0.08] via-white/[0.02] to-transparent">
+          <div className="relative h-full rounded-3xl bg-gradient-to-br from-[#0A0A0A] to-black p-8 md:p-10 overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+            <div className="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/[0.06] blur-[100px] rounded-full pointer-events-none" />
+            <div className="relative">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center">
+                  <Telescope className="w-5 h-5 text-neutral-300" />
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-[3px] font-mono text-neutral-500 font-bold">
+                    Visão
+                  </div>
+                  <div className="text-sm text-neutral-500">Onde queremos chegar</div>
+                </div>
+              </div>
+              <p className="text-base md:text-lg text-neutral-300 leading-relaxed font-sans">
+                Ser referência em growth marketing inteligente no Brasil — a
+                agência que empresários buscam quando querem parar de
+                desperdiçar verba e começar a ter um sistema de aquisição que
+                funciona de verdade.
+              </p>
             </div>
           </div>
         </div>

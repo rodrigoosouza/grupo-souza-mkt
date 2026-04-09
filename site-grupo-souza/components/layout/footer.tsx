@@ -1,5 +1,25 @@
 import Link from "next/link";
 import { Mail, MessageCircle } from "lucide-react";
+import { Logo } from "@/components/brand/logo";
+
+function InstagramIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
+  );
+}
 
 const FOOTER_LINKS = {
   servicos: [
@@ -7,9 +27,11 @@ const FOOTER_LINKS = {
     { label: "Tracking", href: "/servicos/tracking" },
     { label: "Landing Pages", href: "/servicos/landing-pages" },
     { label: "Automação", href: "/servicos/automacao" },
+    { label: "Ver todos", href: "/servicos" },
   ],
   empresa: [
     { label: "Sobre", href: "/sobre" },
+    { label: "Histórias", href: "/historias" },
     { label: "Blog", href: "/blog" },
     { label: "Pacotes", href: "/pacotes" },
     { label: "Contato", href: "/contato" },
@@ -27,31 +49,51 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <div className="text-lg font-bold tracking-tight mb-4">
-              GRUPO{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-500">
-                SOUZA
-              </span>
+            <div className="mb-4">
+              <Logo size={28} asLink={false} />
             </div>
-            <p className="text-xs text-neutral-500 leading-relaxed mb-6 max-w-[240px]">
-              Infraestrutura de aquisição para empresas em crescimento. Do clique ao contrato, com dados em cada etapa.
+            <p className="text-xs text-neutral-500 leading-relaxed mb-6 max-w-[260px]">
+              Infraestrutura de aquisição para empresas em crescimento. Do
+              clique ao contrato, com dados em cada etapa.
             </p>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-2">
               <a
-                href="https://wa.me/5500000000000"
+                href="https://wa.me/5519996022561"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-emerald-400 hover:border-emerald-500/30 transition-colors"
+                className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-emerald-400 hover:border-emerald-500/30 transition-colors"
                 aria-label="WhatsApp"
+                title="WhatsApp (19) 99602-2561"
               >
                 <MessageCircle className="w-4 h-4" />
               </a>
               <a
                 href="mailto:contato@gruposouza.com.br"
-                className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-emerald-400 hover:border-emerald-500/30 transition-colors"
+                className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-emerald-400 hover:border-emerald-500/30 transition-colors"
                 aria-label="Email"
+                title="contato@gruposouza.com.br"
               >
                 <Mail className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.instagram.com/gruposouzamkt/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-emerald-400 hover:border-emerald-500/30 transition-colors"
+                aria-label="Instagram Grupo Souza"
+                title="@gruposouzamkt"
+              >
+                <InstagramIcon className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.instagram.com/rodrigosouzadomarketing/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-emerald-400 hover:border-emerald-500/30 transition-colors"
+                aria-label="Instagram Rodrigo Souza"
+                title="@rodrigosouzadomarketing"
+              >
+                <InstagramIcon className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -109,13 +151,30 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+            <h4 className="text-[11px] font-bold text-neutral-500 uppercase tracking-widest mt-8 mb-4">
+              Contato direto
+            </h4>
+            <a
+              href="https://wa.me/5519996022561"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-xs text-neutral-400 hover:text-emerald-400 transition-colors"
+            >
+              (19) 99602-2561
+            </a>
+            <a
+              href="mailto:contato@gruposouza.com.br"
+              className="block text-xs text-neutral-400 hover:text-emerald-400 transition-colors mt-1 break-all"
+            >
+              contato@gruposouza.com.br
+            </a>
           </div>
         </div>
 
         {/* Bottom */}
         <div className="h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent mb-8" />
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[11px] text-neutral-600">
+          <p className="text-[11px] text-neutral-600 text-center md:text-left">
             &copy; {new Date().getFullYear()} Grupo Souza MKT. Todos os direitos reservados.
           </p>
           <p className="text-[11px] text-neutral-600 font-mono">

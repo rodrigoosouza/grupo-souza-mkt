@@ -7,18 +7,35 @@ import { HiddenFields } from "./hidden-fields";
 import { pushDataLayerEvent } from "@/lib/tracking";
 
 const REVENUE_OPTIONS = [
-  { value: "ate-100k", label: "Até R$100 mil/mês" },
-  { value: "100k-300k", label: "R$100-300 mil/mês" },
-  { value: "300k-1m", label: "R$300 mil - 1 milhão/mês" },
-  { value: "1m-5m", label: "R$1-5 milhões/mês" },
-  { value: "acima-5m", label: "Acima de R$5 milhões/mês" },
+  { value: "ate-50k", label: "Até R$ 50 mil/mês" },
+  { value: "50k-100k", label: "R$ 50-100 mil/mês" },
+  { value: "100k-300k", label: "R$ 100-300 mil/mês" },
+  { value: "300k-1m", label: "R$ 300 mil - 1 milhão/mês" },
+  { value: "1m-5m", label: "R$ 1-5 milhões/mês" },
+  { value: "acima-5m", label: "Acima de R$ 5 milhões/mês" },
 ];
 
 const PAIN_OPTIONS = [
   { value: "gerar-leads", label: "Preciso gerar mais leads" },
-  { value: "reduzir-custo", label: "Meu custo por lead é alto" },
+  { value: "reduzir-cpl", label: "Meu CPL está alto" },
+  { value: "tracking", label: "Tracking quebrado / sem atribuição" },
   { value: "organizar-funil", label: "Não tenho controle do funil" },
-  { value: "montar-do-zero", label: "Preciso montar do zero" },
+  { value: "automacao", label: "Falta automação / nutrição" },
+  { value: "montar-do-zero", label: "Preciso montar tudo do zero" },
+  { value: "outro", label: "Outro" },
+];
+
+const SEGMENT_OPTIONS = [
+  { value: "saas", label: "SaaS / Software" },
+  { value: "educacao", label: "Educação / Cursos" },
+  { value: "saude", label: "Saúde / Clínicas" },
+  { value: "servicos-b2b", label: "Serviços B2B" },
+  { value: "servicos-b2c", label: "Serviços B2C" },
+  { value: "ecommerce", label: "E-commerce" },
+  { value: "consultoria", label: "Consultoria / Profissional liberal" },
+  { value: "industria", label: "Indústria / Manufatura" },
+  { value: "imobiliario", label: "Imobiliário" },
+  { value: "financeiro", label: "Financeiro / Seguros" },
   { value: "outro", label: "Outro" },
 ];
 
@@ -82,6 +99,7 @@ export function DiagnosticForm() {
           name="name"
           placeholder="Nome completo"
           required
+          autoComplete="name"
           className={inputClass}
         />
         <input
@@ -89,6 +107,7 @@ export function DiagnosticForm() {
           name="email"
           placeholder="E-mail"
           required
+          autoComplete="email"
           className={inputClass}
         />
       </div>
@@ -100,19 +119,43 @@ export function DiagnosticForm() {
           id="phone"
           placeholder="WhatsApp (00) 00000-0000"
           required
+          autoComplete="tel"
           className={inputClass}
         />
         <input
-          type="url"
-          name="website"
-          placeholder="Site da empresa (opcional)"
+          type="text"
+          name="company"
+          placeholder="Nome da empresa"
+          required
+          autoComplete="organization"
           className={inputClass}
         />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <select name="revenue" required className={`${inputClass} appearance-none`}>
-          <option value="" disabled selected>
+        <select
+          name="segment"
+          required
+          defaultValue=""
+          className={`${inputClass} appearance-none`}
+        >
+          <option value="" disabled>
+            Segmento da empresa
+          </option>
+          {SEGMENT_OPTIONS.map((opt) => (
+            <option key={opt.value} value={opt.value} className="bg-neutral-900">
+              {opt.label}
+            </option>
+          ))}
+        </select>
+
+        <select
+          name="revenue"
+          required
+          defaultValue=""
+          className={`${inputClass} appearance-none`}
+        >
+          <option value="" disabled>
             Faturamento mensal
           </option>
           {REVENUE_OPTIONS.map((opt) => (
@@ -121,22 +164,27 @@ export function DiagnosticForm() {
             </option>
           ))}
         </select>
-
-        <select name="pain" required className={`${inputClass} appearance-none`}>
-          <option value="" disabled selected>
-            Principal dor
-          </option>
-          {PAIN_OPTIONS.map((opt) => (
-            <option key={opt.value} value={opt.value} className="bg-neutral-900">
-              {opt.label}
-            </option>
-          ))}
-        </select>
       </div>
+
+      <select
+        name="pain"
+        required
+        defaultValue=""
+        className={`${inputClass} appearance-none`}
+      >
+        <option value="" disabled>
+          Principal dor / desafio atual
+        </option>
+        {PAIN_OPTIONS.map((opt) => (
+          <option key={opt.value} value={opt.value} className="bg-neutral-900">
+            {opt.label}
+          </option>
+        ))}
+      </select>
 
       <textarea
         name="message"
-        placeholder="Conte um pouco mais sobre o que precisa (opcional)"
+        placeholder="Conte um pouco mais sobre o seu cenário (opcional)"
         rows={3}
         className={`${inputClass} resize-none`}
       />

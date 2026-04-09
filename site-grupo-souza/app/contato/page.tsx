@@ -1,20 +1,39 @@
 import type { Metadata } from "next";
 import { DiagnosticForm } from "@/components/forms/diagnostic-form";
-import { Mail, MessageCircle, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Mail, MessageCircle, MapPin, ArrowRight } from "lucide-react";
+
+function InstagramIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
+  );
+}
 
 export const metadata: Metadata = {
   title: "Contato",
   description:
-    "Entre em contato com o Grupo Souza MKT. WhatsApp, email ou formulário.",
+    "Entre em contato com o Grupo Souza MKT. WhatsApp, email, instagram ou formulário.",
 };
 
 const CONTACTS = [
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "(00) 00000-0000",
-    href: "https://wa.me/5500000000000",
-    description: "Resposta em até 4h",
+    value: "(19) 99602-2561",
+    href: "https://wa.me/5519996022561",
+    description: "Resposta rápida em horário comercial",
     highlight: true,
   },
   {
@@ -26,11 +45,19 @@ const CONTACTS = [
     highlight: false,
   },
   {
-    icon: Clock,
-    label: "Horário",
-    value: "Seg-Sex, 9h-18h",
-    href: null,
-    description: "Horário de Brasília",
+    icon: InstagramIcon,
+    label: "Instagram (Grupo Souza)",
+    value: "@gruposouzamkt",
+    href: "https://www.instagram.com/gruposouzamkt/",
+    description: "Conteúdo, bastidores e cases",
+    highlight: false,
+  },
+  {
+    icon: InstagramIcon,
+    label: "Instagram (Rodrigo)",
+    value: "@rodrigosouzadomarketing",
+    href: "https://www.instagram.com/rodrigosouzadomarketing/",
+    description: "Conteúdo pessoal do fundador",
     highlight: false,
   },
   {
