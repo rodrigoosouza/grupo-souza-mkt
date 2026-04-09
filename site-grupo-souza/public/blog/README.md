@@ -33,7 +33,41 @@ site-grupo-souza/public/blog/beneficios-tracking-completo-gtm-2026-cover.jpg
 
 Ou seja: cada artigo já tem cover bonito automaticamente. Você só precisa criar a imagem custom quando quiser uma foto/visual específico pra um artigo importante.
 
-## Como criar imagens
+## 🚀 Workflow recomendado: `pnpm add-cover`
+
+Em vez de redimensionar manualmente, use o script automatizado:
+
+```bash
+cd site-grupo-souza
+pnpm add-cover {slug-do-artigo} {caminho-da-imagem}
+```
+
+**Exemplos:**
+
+```bash
+# Imagem do Downloads
+pnpm add-cover beneficios-tracking-completo-gtm-2026 ~/Downloads/foto.png
+
+# HEIC do iPhone
+pnpm add-cover como-reduzir-cpl-com-dados /tmp/IMG_4823.HEIC
+
+# Caminho completo
+pnpm add-cover o-que-e-aieo-geo "/Users/eu/Pictures/banner.jpg"
+```
+
+**O que o script faz automaticamente:**
+1. ✅ Valida que o post `.md` existe
+2. ✅ Lê a imagem fonte (qualquer formato: PNG, JPG, HEIC, WebP, TIFF)
+3. ✅ Redimensiona pra max 1600px de largura (preserva ratio)
+4. ✅ Converte pra JPG com qualidade 82 (~150-180KB)
+5. ✅ Salva em `public/blog/{slug}-cover.jpg` com nome SEO-friendly
+6. ✅ Atualiza o frontmatter do post automaticamente
+7. ✅ Avisa se o arquivo ficou maior que 250KB ou menor que 1200px
+8. ✅ Remove acentos, espaços, caracteres invalidos do nome
+
+Resultado: você não precisa pensar em nada — só dropa a imagem e roda o comando.
+
+## Como criar imagens (do zero)
 
 Opções recomendadas (em ordem de preferência):
 

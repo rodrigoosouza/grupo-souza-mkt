@@ -66,9 +66,13 @@ Cria `content/blog/{slug}.md` com frontmatter completo + estrutura de exemplo.
 
 A skill `blog-grupo-souza` ativa automaticamente: produz 3.500-4.500 palavras com TL;DR, definicao, contexto, beneficios, caso pratico, erros comuns, FAQ, comparativo, conclusao e CTA. Frontmatter completo, links internos/externos, lead magnet custom.
 
-### 3. Adicionar imagem de capa
-- Custom: cole o arquivo em `site-grupo-souza/public/blog/{slug}-cover.jpg` (16:9, ≤200KB)
-- Sem custom: o site usa automaticamente a OG image dinamica gerada (1200×630 com titulo + categoria + autor)
+### 3. Adicionar imagem de capa (automatico)
+```bash
+pnpm add-cover {slug-do-artigo} ~/Downloads/imagem.jpg
+```
+O script aceita qualquer formato (PNG, HEIC, JPG, WebP), redimensiona pra 1600px, converte pra JPG, comprime, renomeia certo e atualiza o frontmatter automaticamente.
+
+**Sem capa custom:** o site usa automaticamente a OG image dinamica gerada (1200×630 com titulo + categoria + autor).
 
 ### 4. Publicar
 - Mude `status: draft` pra `status: published` no frontmatter
