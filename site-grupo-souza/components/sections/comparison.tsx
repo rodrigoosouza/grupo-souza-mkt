@@ -45,7 +45,7 @@ const ROWS = [
 
 export function Comparison() {
   return (
-    <section className="[animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll max-w-6xl mx-auto px-4 md:px-6 py-24">
+    <section className="[animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll max-w-6xl mx-auto px-4 md:px-6 pt-8 md:pt-12 pb-16 md:pb-24">
       <div className="text-center mb-14">
         <span className="text-[10px] font-bold text-emerald-500 uppercase tracking-[3px] font-mono block mb-3">
           Por que escolher
@@ -58,21 +58,22 @@ export function Comparison() {
         </p>
       </div>
 
-      <div className="rounded-2xl border border-white/[0.06] bg-[#0A0A0A] overflow-hidden">
+      <div className="rounded-2xl border border-white/[0.06] bg-[#0A0A0A] overflow-x-auto">
+        <div className="min-w-[640px]">
         {/* Header */}
         <div className="grid grid-cols-3 border-b border-white/[0.06]">
-          <div className="p-5 text-[11px] uppercase tracking-wider text-neutral-500 font-mono" />
-          <div className="p-5 text-center border-l border-white/[0.06]">
-            <div className="text-[11px] uppercase tracking-wider text-neutral-500 font-mono mb-1">
+          <div className="p-3 md:p-5 text-[11px] uppercase tracking-wider text-neutral-500 font-mono" />
+          <div className="p-3 md:p-5 text-center border-l border-white/[0.06]">
+            <div className="text-[10px] md:text-[11px] uppercase tracking-wider text-neutral-500 font-mono mb-1">
               Tradicional
             </div>
-            <div className="text-sm text-neutral-400 font-sans">Agência comum</div>
+            <div className="text-xs md:text-sm text-neutral-400 font-sans">Agência comum</div>
           </div>
-          <div className="p-5 text-center border-l border-white/[0.06] bg-emerald-500/[0.03]">
-            <div className="text-[11px] uppercase tracking-wider text-emerald-500 font-mono mb-1">
+          <div className="p-3 md:p-5 text-center border-l border-white/[0.06] bg-emerald-500/[0.03]">
+            <div className="text-[10px] md:text-[11px] uppercase tracking-wider text-emerald-500 font-mono mb-1">
               Grupo Souza
             </div>
-            <div className="text-sm text-white font-medium font-sans">
+            <div className="text-xs md:text-sm text-white font-medium font-sans">
               Engenharia de aquisição
             </div>
           </div>
@@ -84,21 +85,22 @@ export function Comparison() {
             key={i}
             className="grid grid-cols-3 border-b border-white/[0.04] last:border-b-0"
           >
-            <div className="p-5 text-sm text-neutral-300 font-sans">
+            <div className="p-3 md:p-5 text-xs md:text-sm text-neutral-300 font-sans">
               {row.label}
             </div>
-            <div className="p-5 border-l border-white/[0.06] flex items-start gap-2">
-              <X className="w-4 h-4 text-red-500/60 flex-shrink-0 mt-0.5" />
-              <span className="text-sm text-neutral-500 font-sans">
+            <div className="p-3 md:p-5 border-l border-white/[0.06] flex items-start gap-2">
+              <X className="w-3.5 h-3.5 md:w-4 md:h-4 text-red-500/60 flex-shrink-0 mt-0.5" />
+              <span className="text-xs md:text-sm text-neutral-500 font-sans">
                 {row.traditional}
               </span>
             </div>
-            <div className="p-5 border-l border-white/[0.06] bg-emerald-500/[0.02] flex items-start gap-2">
-              <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-              <span className="text-sm text-white font-sans">{row.grupo}</span>
+            <div className="p-3 md:p-5 border-l border-white/[0.06] bg-emerald-500/[0.02] flex items-start gap-2">
+              <Check className="w-3.5 h-3.5 md:w-4 md:h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+              <span className="text-xs md:text-sm text-white font-sans">{row.grupo}</span>
             </div>
           </div>
         ))}
+        </div>
       </div>
     </section>
   );

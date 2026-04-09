@@ -197,8 +197,8 @@ export default async function BlogPostPage({
         <div className="absolute inset-0 dot-grid opacity-20" />
         <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-emerald-900/15 blur-[100px] rounded-full" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-12 xl:gap-16">
-          <div className="max-w-3xl w-full lg:mx-0 mx-auto">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-12 xl:gap-16">
+          <div className="max-w-3xl w-full min-w-0 lg:mx-0 mx-auto overflow-hidden">
           {/* Back link */}
           <div className="[animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
             <Link
@@ -278,7 +278,7 @@ export default async function BlogPostPage({
           )}
 
           {/* Content */}
-          <div className="prose prose-invert prose-emerald max-w-none [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll prose-headings:font-bold prose-headings:tracking-tight prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-gray-300 prose-p:leading-relaxed prose-strong:text-white prose-li:text-gray-300 prose-a:text-emerald-400 prose-a:no-underline hover:prose-a:underline prose-hr:border-white/[0.06]">
+          <div className="prose prose-invert prose-emerald max-w-none break-words [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll prose-headings:font-bold prose-headings:tracking-tight prose-headings:break-words prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-gray-300 prose-p:leading-relaxed prose-strong:text-white prose-li:text-gray-300 prose-a:text-emerald-400 prose-a:no-underline hover:prose-a:underline prose-a:break-words prose-hr:border-white/[0.06]">
             <MDXRemote source={post.content} components={mdxComponents} />
           </div>
 
