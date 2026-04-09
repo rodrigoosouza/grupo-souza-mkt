@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Clock, User, Calendar, ArrowRight } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, ArrowRight } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import {
   getAllSlugs,
@@ -206,28 +207,64 @@ export default async function BlogPostPage({
           </div>
 
           {/* Header */}
-          <header className="mb-12 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
-            <CategoryBadge category={post.category} className="mb-4" />
+          <header className="mb-10 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
+            <CategoryBadge category={post.category} className="mb-5" />
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6">
               {post.title}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
-              <span className="flex items-center gap-1.5">
-                <User className="w-4 h-4" />
-                {post.author}
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Calendar className="w-4 h-4" />
-                {formatDate(post.date)}
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Clock className="w-4 h-4" />
-                {post.readingTime} min de leitura
-              </span>
+            {post.excerpt && (
+              <p className="text-lg text-neutral-400 leading-relaxed mb-8 font-sans">
+                {post.excerpt}
+              </p>
+            )}
+
+            {/* Author + meta */}
+            <div className="flex flex-wrap items-center gap-5 pb-2">
+              <div className="flex items-center gap-3">
+                <div className="relative w-11 h-11 rounded-full overflow-hidden ring-2 ring-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                  <Image
+                    src="/rodrigo-souza.png"
+                    alt={post.author}
+                    fill
+                    sizes="44px"
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-white">{post.author}</div>
+                  <div className="text-xs text-neutral-500">Fundador · Grupo Souza</div>
+                </div>
+              </div>
+              <div className="h-8 w-px bg-white/10 hidden sm:block" />
+              <div className="flex items-center gap-4 text-xs text-neutral-500">
+                <span className="flex items-center gap-1.5">
+                  <Calendar className="w-3.5 h-3.5" />
+                  {formatDate(post.date)}
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Clock className="w-3.5 h-3.5" />
+                  {post.readingTime} min
+                </span>
+              </div>
             </div>
           </header>
+
+          {/* Cover image */}
+          {post.cover && (
+            <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-12 ring-1 ring-white/[0.08] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] [animation:animationIn_0.8s_ease-out_0.25s_both] animate-on-scroll">
+              <Image
+                src={post.cover}
+                alt={post.cover_alt || post.title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 768px"
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+            </div>
+          )}
 
           {/* TOC inline */}
           {toc.length >= 3 && (
