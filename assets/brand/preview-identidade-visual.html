@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo Souza MKT — Brand Identity v2</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --emerald-950: #022c22;
+    --emerald-900: #064e3b;
+    --emerald-800: #065f46;
+    --emerald-700: #047857;
+    --emerald-600: #059669;
+    --emerald-500: #10b981;
+    --emerald-400: #34d399;
+    --emerald-300: #6ee7b7;
+    --emerald-100: #d1fae5;
+    --emerald-50: #ecfdf5;
+    --black: #09090b;
+    --gray-950: #0c0c0e;
+    --gray-900: #111113;
+    --gray-800: #1a1a1f;
+    --gray-700: #27272a;
+    --gray-600: #3f3f46;
+    --gray-500: #52525b;
+    --gray-400: #71717a;
+    --gray-300: #a1a1aa;
+    --gray-200: #d4d4d8;
+    --gray-100: #f4f4f5;
+    --gray-50: #fafafa;
+    --white: #ffffff;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ===== NAVIGATION ===== */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 16px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(9, 9, 11, 0.8);
+    backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: var(--white);
+  }
+  .nav-logo span {
+    background: linear-gradient(135deg, var(--emerald-400), var(--emerald-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .nav-links { display: flex; gap: 36px; align-items: center; }
+  .nav-links a {
+    color: var(--gray-400);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--white);
+    color: var(--black);
+    border: none;
+    padding: 9px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.2), transparent);
+  }
+  .hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.15);
+    padding: 8px 18px;
+    border-radius: 100px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .hero-pill-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--emerald-400);
+    border-radius: 50%;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .hero-pill span {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--emerald-400);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -3px;
+    max-width: 900px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 .line-1 { color: var(--gray-300); display: block; }
+  .hero h1 .line-2 {
+    display: block;
+    background: linear-gradient(135deg, var(--white) 0%, var(--emerald-300) 50%, var(--emerald-400) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-sub {
+    font-size: 17px;
+    color: var(--gray-400);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+    font-weight: 400;
+  }
+  .hero-buttons { display: flex; gap: 14px; }
+  .btn-hero-primary {
+    background: linear-gradient(135deg, var(--emerald-600), var(--emerald-500));
+    color: var(--white);
+    border: none;
+    padding: 15px 36px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.15), 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .btn-hero-primary:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(16, 185, 129, 0.25), 0 8px 24px rgba(0,0,0,0.4); }
+  .btn-hero-secondary {
+    background: rgba(255,255,255,0.04);
+    color: var(--gray-300);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 15px 36px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+  }
+  .btn-hero-secondary:hover { background: rgba(255,255,255,0.08); color: var(--white); border-color: rgba(255,255,255,0.15); }
+
+  /* ===== BRAND SECTION ===== */
+  .brand-section {
+    padding: 100px 48px;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .brand-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 48px;
+    right: 48px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gray-800), transparent);
+  }
+  .section-header { margin-bottom: 64px; }
+  .section-overline {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--emerald-500);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-size: 44px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .section-desc {
+    font-size: 17px;
+    color: var(--gray-400);
+    max-width: 500px;
+    line-height: 1.7;
+  }
+
+  /* ===== COLOR PALETTE ===== */
+  .palette-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  .palette-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+  .swatch {
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--gray-900);
+    border: 1px solid var(--gray-800);
+    transition: all 0.3s;
+  }
+  .swatch:hover { transform: translateY(-4px); border-color: var(--gray-700); }
+  .swatch-color { height: 120px; position: relative; }
+  .swatch-info { padding: 16px 18px; }
+  .swatch-name { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 2px; }
+  .swatch-hex { font-size: 12px; font-family: 'JetBrains Mono', monospace; color: var(--gray-500); }
+
+  /* ===== TYPOGRAPHY SECTION ===== */
+  .type-grid { display: flex; flex-direction: column; gap: 0; }
+  .type-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: baseline;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--gray-800);
+    gap: 40px;
+  }
+  .type-meta {
+    font-size: 11px;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--gray-500);
+    letter-spacing: 0.5px;
+  }
+  .type-display { font-size: 56px; font-weight: 900; letter-spacing: -2.5px; color: var(--white); line-height: 1; }
+  .type-h2 { font-size: 40px; font-weight: 800; letter-spacing: -1.5px; color: var(--white); line-height: 1.1; }
+  .type-h3 { font-size: 28px; font-weight: 700; letter-spacing: -0.8px; color: var(--white); }
+  .type-body { font-size: 16px; font-weight: 400; color: var(--gray-300); max-width: 520px; line-height: 1.7; }
+  .type-label-text { font-size: 11px; font-weight: 700; color: var(--emerald-500); text-transform: uppercase; letter-spacing: 3px; }
+  .type-mono { font-size: 14px; font-family: 'JetBrains Mono', monospace; font-weight: 500; color: var(--emerald-400); }
+
+  /* ===== CARDS ===== */
+  .cards-section {
+    background: var(--gray-950);
+    padding: 100px 48px;
+    position: relative;
+  }
+  .cards-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gray-800), transparent);
+  }
+  .cards-inner { max-width: 1280px; margin: 0 auto; }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--gray-800);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--gray-800);
+  }
+  .card-item {
+    background: var(--gray-900);
+    padding: 40px;
+    transition: all 0.4s;
+    position: relative;
+  }
+  .card-item:hover { background: var(--gray-800); }
+  .card-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 40px;
+    right: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--emerald-500), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .card-item:hover::before { opacity: 1; }
+  .card-number {
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    color: var(--emerald-500);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  .card-item h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+  }
+  .card-item p {
+    font-size: 14px;
+    color: var(--gray-400);
+    line-height: 1.7;
+  }
+
+  /* ===== METRICS ===== */
+  .metrics-section {
+    padding: 100px 48px;
+    position: relative;
+  }
+  .metrics-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .metrics-inner { max-width: 1280px; margin: 0 auto; }
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 64px;
+  }
+  .metric-item {
+    text-align: center;
+    padding: 48px 24px;
+    position: relative;
+  }
+  .metric-item + .metric-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20%;
+    bottom: 20%;
+    width: 1px;
+    background: var(--gray-800);
+  }
+  .metric-number {
+    font-size: 56px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    background: linear-gradient(135deg, var(--emerald-300), var(--emerald-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .metric-text {
+    font-size: 13px;
+    color: var(--gray-500);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  /* ===== BUTTONS SHOWCASE ===== */
+  .buttons-showcase { margin-top: 64px; }
+  .button-group { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; align-items: center; }
+  .button-group-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gray-500);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .btn {
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    font-family: 'Inter', sans-serif;
+  }
+  .btn-fill-green {
+    background: linear-gradient(135deg, var(--emerald-600), var(--emerald-500));
+    color: var(--white);
+    box-shadow: 0 0 16px rgba(16, 185, 129, 0.15);
+  }
+  .btn-fill-green:hover { transform: translateY(-1px); box-shadow: 0 0 24px rgba(16, 185, 129, 0.25); }
+  .btn-fill-white { background: var(--white); color: var(--black); }
+  .btn-fill-white:hover { opacity: 0.9; transform: translateY(-1px); }
+  .btn-outline-green {
+    background: transparent;
+    color: var(--emerald-400);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+  .btn-outline-green:hover { background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.5); }
+  .btn-outline-white {
+    background: transparent;
+    color: var(--gray-300);
+    border: 1px solid var(--gray-700);
+  }
+  .btn-outline-white:hover { border-color: var(--gray-500); color: var(--white); }
+  .btn-ghost-green {
+    background: rgba(16, 185, 129, 0.08);
+    color: var(--emerald-400);
+    border: none;
+  }
+  .btn-ghost-green:hover { background: rgba(16, 185, 129, 0.15); }
+  .btn-sm { padding: 8px 18px; font-size: 13px; border-radius: 8px; }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    padding: 48px;
+    text-align: center;
+    position: relative;
+  }
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 48px;
+    right: 48px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gray-800), transparent);
+  }
+  .footer-logo {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gray-500);
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+  }
+  .footer-logo span {
+    background: linear-gradient(135deg, var(--emerald-400), var(--emerald-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .footer-text { font-size: 13px; color: var(--gray-600); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 42px; letter-spacing: -2px; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    .palette-row { flex-wrap: wrap; }
+    .swatch { min-width: calc(50% - 6px); }
+    .nav-links { display: none; }
+    .brand-section, .cards-section, .metrics-section { padding: 60px 24px; }
+    .nav { padding: 16px 24px; }
+    .hero { padding: 100px 24px 60px; }
+    .type-item { grid-template-columns: 1fr; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">GRUPO <span>SOUZA</span></div>
+  <div class="nav-links">
+    <a href="#">Servicos</a>
+    <a href="#">Cases</a>
+    <a href="#">Sobre</a>
+    <a href="#">Blog</a>
+    <button class="nav-cta">Agendar diagnostico</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pill">
+    <div class="hero-pill-dot"></div>
+    <span>Growth Marketing & Infraestrutura</span>
+  </div>
+  <h1>
+    <span class="line-1">Sua empresa cresce.</span>
+    <span class="line-2">Nos montamos a maquina.</span>
+  </h1>
+  <p class="hero-sub">Do clique ao contrato, com dados em cada etapa. Infraestrutura de aquisicao que faz seu negocio crescer com previsibilidade.</p>
+  <div class="hero-buttons">
+    <button class="btn-hero-primary">Agendar diagnostico gratuito</button>
+    <button class="btn-hero-secondary">Ver como funciona</button>
+  </div>
+</section>
+
+<!-- COLOR PALETTE -->
+<section class="brand-section">
+  <div class="section-header">
+    <div class="section-overline">Paleta de Cores</div>
+    <div class="section-title">Identidade Visual</div>
+    <div class="section-desc">Verde esmeralda escuro como primaria. Preto como base. Gradientes sutis para profundidade. Branco para contraste.</div>
+  </div>
+
+  <div class="palette-label">Emerald — Cor Primaria</div>
+  <div class="palette-row">
+    <div class="swatch">
+      <div class="swatch-color" style="background: #022c22;"></div>
+      <div class="swatch-info"><div class="swatch-name">Emerald 950</div><div class="swatch-hex">#022c22</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #064e3b;"></div>
+      <div class="swatch-info"><div class="swatch-name">Emerald 900</div><div class="swatch-hex">#064e3b</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #059669;"></div>
+      <div class="swatch-info"><div class="swatch-name">Emerald 600</div><div class="swatch-hex">#059669</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #10b981;"></div>
+      <div class="swatch-info"><div class="swatch-name">Emerald 500</div><div class="swatch-hex">#10b981</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #34d399;"></div>
+      <div class="swatch-info"><div class="swatch-name">Emerald 400</div><div class="swatch-hex">#34d399</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: linear-gradient(135deg, #d1fae5, #ecfdf5);"></div>
+      <div class="swatch-info"><div class="swatch-name">Emerald 50-100</div><div class="swatch-hex">#ecfdf5</div></div>
+    </div>
+  </div>
+
+  <div class="palette-label">Neutros — Base</div>
+  <div class="palette-row">
+    <div class="swatch">
+      <div class="swatch-color" style="background: #09090b;"></div>
+      <div class="swatch-info"><div class="swatch-name">Black</div><div class="swatch-hex">#09090b</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #111113;"></div>
+      <div class="swatch-info"><div class="swatch-name">Gray 900</div><div class="swatch-hex">#111113</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #27272a;"></div>
+      <div class="swatch-info"><div class="swatch-name">Gray 700</div><div class="swatch-hex">#27272a</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #71717a;"></div>
+      <div class="swatch-info"><div class="swatch-name">Gray 400</div><div class="swatch-hex">#71717a</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #d4d4d8;"></div>
+      <div class="swatch-info"><div class="swatch-name">Gray 200</div><div class="swatch-hex">#d4d4d8</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #ffffff; border-bottom: 1px solid #d4d4d8;"></div>
+      <div class="swatch-info"><div class="swatch-name">White</div><div class="swatch-hex">#ffffff</div></div>
+    </div>
+  </div>
+
+  <!-- TYPOGRAPHY -->
+  <div class="palette-label" style="margin-top: 32px;">Tipografia — Inter + JetBrains Mono</div>
+  <div class="type-grid">
+    <div class="type-item">
+      <div class="type-meta">Display<br>56px / 900</div>
+      <div class="type-display">Infraestrutura</div>
+    </div>
+    <div class="type-item">
+      <div class="type-meta">Heading 2<br>40px / 800</div>
+      <div class="type-h2">Cresca com previsibilidade</div>
+    </div>
+    <div class="type-item">
+      <div class="type-meta">Heading 3<br>28px / 700</div>
+      <div class="type-h3">Tracking avancado de ponta a ponta</div>
+    </div>
+    <div class="type-item">
+      <div class="type-meta">Body<br>16px / 400</div>
+      <div class="type-body">Construimos o sistema que faz o lead chegar, ser rastreado, ser nutrido e ser entregue pro time comercial com contexto completo.</div>
+    </div>
+    <div class="type-item">
+      <div class="type-meta">Overline<br>11px / 700</div>
+      <div class="type-label-text">Growth Marketing & Automacao</div>
+    </div>
+    <div class="type-item">
+      <div class="type-meta">Code<br>14px / 500</div>
+      <div class="type-mono">dataLayer.push({ event: "form_submit_lead" })</div>
+    </div>
+  </div>
+
+  <!-- BUTTONS -->
+  <div class="buttons-showcase">
+    <div class="palette-label">Botoes</div>
+    <div class="button-group-label">Primarios</div>
+    <div class="button-group">
+      <button class="btn btn-fill-green">Agendar diagnostico</button>
+      <button class="btn btn-fill-white">Saiba mais</button>
+    </div>
+    <div class="button-group-label" style="margin-top: 20px;">Secundarios</div>
+    <div class="button-group">
+      <button class="btn btn-outline-green">Ver servicos</button>
+      <button class="btn btn-outline-white">Como funciona</button>
+      <button class="btn btn-ghost-green">Ver cases</button>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES CARDS -->
+<section class="cards-section">
+  <div class="cards-inner">
+    <div class="section-header">
+      <div class="section-overline">Servicos</div>
+      <div class="section-title">Infraestrutura completa<br>de aquisicao</div>
+      <div class="section-desc">Nao vendemos horas. Vendemos um sistema que funciona.</div>
+    </div>
+
+    <div class="cards-grid">
+      <div class="card-item">
+        <div class="card-number">01</div>
+        <h3>Tracking Avancado</h3>
+        <p>27 campos de atribuicao em cada lead. GTM, GA4, pixels, conversoes offline. Voce sabe de onde veio cada real.</p>
+      </div>
+      <div class="card-item">
+        <div class="card-number">02</div>
+        <h3>Trafego Inteligente</h3>
+        <p>Google Ads e Meta Ads com alocacao baseada em dados reais. Sem chute de verba.</p>
+      </div>
+      <div class="card-item">
+        <div class="card-number">03</div>
+        <h3>Landing Pages + CRO</h3>
+        <p>Paginas que convertem. Estrategia de conversao integrada com tracking desde o primeiro clique.</p>
+      </div>
+      <div class="card-item">
+        <div class="card-number">04</div>
+        <h3>Automacao</h3>
+        <p>Fluxos de nutricao, lead scoring, triggers comportamentais. O lead certo, mensagem certa, hora certa.</p>
+      </div>
+      <div class="card-item">
+        <div class="card-number">05</div>
+        <h3>Dashboards</h3>
+        <p>Paineis em tempo real. CAC, ROI, metricas de funil. Transparencia total.</p>
+      </div>
+      <div class="card-item">
+        <div class="card-number">06</div>
+        <h3>AIEO / GEO</h3>
+        <p>Seu negocio nas respostas do ChatGPT, Perplexity e Google AI. Visibilidade onde ninguem esta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="metrics-section">
+  <div class="metrics-inner">
+    <div class="section-header" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+      <div class="section-overline">Resultados</div>
+      <div class="section-title">Numeros reais</div>
+      <div class="section-desc" style="text-align: center;">Cada metrica vem do dashboard do cliente. Sem inventar numero.</div>
+    </div>
+    <div class="metrics-grid">
+      <div class="metric-item">
+        <div class="metric-number">27</div>
+        <div class="metric-text">Campos de atribuicao por lead</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-number">-68%</div>
+        <div class="metric-text">Reducao media no CPL</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-number">3x</div>
+        <div class="metric-text">Mais leads qualificados</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-number">100%</div>
+        <div class="metric-text">Rastreabilidade do funil</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">GRUPO <span>SOUZA</span></div>
+  <div class="footer-text">Growth Marketing & Infraestrutura de Aquisicao — © 2026</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "empresa": "",
+  "cores": {
+    "primaria": "",
+    "secundaria": "",
+    "accent": "",
+    "neutro_claro": "",
+    "neutro_escuro": ""
+  },
+  "tipografia": {
+    "titulo": "",
+    "corpo": ""
+  },
+  "tom_de_voz": {
+    "descricao": "",
+    "exemplos_bons": [],
+    "exemplos_ruins": [],
+    "palavras_proibidas": []
+  },
+  "logo_path": "",
+  "style_reference": ""
+}
