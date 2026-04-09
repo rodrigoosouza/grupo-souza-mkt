@@ -17,30 +17,77 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const SITE_URL = "https://gruposouza.com.br";
+const SITE_TITLE = "Grupo Souza MKT — Infraestrutura de Aquisição";
+const SITE_DESCRIPTION =
+  "Construímos a infraestrutura de aquisição que faz sua empresa crescer com previsibilidade. Tráfego pago, tracking avançado, landing pages, automação e dados.";
+const OG_IMAGE_URL = `${SITE_URL}/opengraph-image`;
+
 export const metadata: Metadata = {
   title: {
-    default: "Grupo Souza MKT — Infraestrutura de Aquisicao",
+    default: SITE_TITLE,
     template: "%s | Grupo Souza MKT",
   },
-  description:
-    "Construimos a maquina de aquisicao que faz sua empresa crescer com previsibilidade. Trafego pago, tracking avancado, landing pages, automacao e dados.",
-  metadataBase: new URL("https://gruposouza.com.br"),
+  description: SITE_DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
+  applicationName: "Grupo Souza MKT",
+  authors: [{ name: "Rodrigo Souza", url: SITE_URL }],
+  creator: "Rodrigo Souza",
+  publisher: "Grupo Souza MKT",
+  keywords: [
+    "growth marketing",
+    "tráfego pago",
+    "Google Ads",
+    "Meta Ads",
+    "tracking GTM",
+    "GA4",
+    "landing pages CRO",
+    "automação de marketing",
+    "AIEO",
+    "GEO",
+    "infraestrutura de aquisição",
+  ],
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
+    url: SITE_URL,
     siteName: "Grupo Souza MKT",
-    title: "Grupo Souza MKT — Infraestrutura de Aquisicao",
-    description:
-      "Do clique ao contrato, com dados em cada etapa. Growth marketing para empresas em crescimento.",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [
+      {
+        url: OG_IMAGE_URL,
+        width: 1200,
+        height: 630,
+        alt: "Grupo Souza MKT — Construímos a infraestrutura de aquisição",
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE_URL],
+    creator: "@rodrigosouzadomarketing",
   },
   robots: {
     index: true,
     follow: true,
     "max-image-preview": "large",
     "max-snippet": -1,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 
