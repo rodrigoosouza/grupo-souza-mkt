@@ -17,6 +17,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Logo } from "@/components/brand/logo";
+import { CTAButton } from "@/components/forms/cta-button";
 
 const SERVICE_LINKS = [
   { label: "Tráfego Pago", href: "/servicos/trafego-pago", icon: Megaphone, desc: "Google Ads & Meta Ads" },
@@ -95,11 +96,11 @@ export function Navbar() {
                 }`}
               >
                 {/* Arrow indicator */}
-                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-[#111113] border-l border-t border-white/[0.08]" />
+                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-white border-l border-t border-black/[0.08]" />
 
-                <div className="relative w-[720px] bg-[#111113] border border-white/[0.08] rounded-2xl shadow-2xl shadow-black/60 overflow-hidden">
-                  {/* Glow effect inside */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-emerald-500/[0.03] blur-[80px] rounded-full pointer-events-none" />
+                <div className="relative w-[720px] bg-white border border-black/[0.08] rounded-2xl shadow-[0_30px_80px_-15px_rgba(0,0,0,0.4)] overflow-hidden">
+                  {/* Glow effect inside (subtle emerald) */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-emerald-500/[0.04] blur-[80px] rounded-full pointer-events-none" />
 
                   <div className="relative p-5">
                     <div className="grid grid-cols-2 gap-1.5">
@@ -108,16 +109,16 @@ export function Navbar() {
                           key={service.href}
                           href={service.href}
                           onClick={() => setMegaOpen(false)}
-                          className="group flex items-center gap-4 px-4 py-3.5 rounded-xl hover:bg-white/[0.04] transition-all duration-200"
+                          className="group flex items-center gap-4 px-4 py-3.5 rounded-xl hover:bg-emerald-500/[0.06] transition-all duration-200"
                         >
-                          <div className="w-10 h-10 rounded-xl bg-emerald-500/[0.08] border border-emerald-500/[0.15] flex items-center justify-center group-hover:border-emerald-500/30 group-hover:bg-emerald-500/[0.12] group-hover:shadow-[0_0_20px_rgba(16,185,129,0.08)] transition-all duration-300 flex-shrink-0">
-                            <service.icon className="w-4.5 h-4.5 text-emerald-400" />
+                          <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center group-hover:border-emerald-500/40 group-hover:bg-emerald-500/15 group-hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] transition-all duration-300 flex-shrink-0">
+                            <service.icon className="w-4.5 h-4.5 text-emerald-600" />
                           </div>
                           <div>
-                            <div className="text-sm font-medium text-neutral-200 group-hover:text-white transition-colors">
+                            <div className="text-sm font-semibold text-neutral-900 group-hover:text-emerald-700 transition-colors">
                               {service.label}
                             </div>
-                            <div className="text-xs text-neutral-500 group-hover:text-neutral-400 transition-colors">
+                            <div className="text-xs text-neutral-500 group-hover:text-neutral-700 transition-colors">
                               {service.desc}
                             </div>
                           </div>
@@ -125,14 +126,14 @@ export function Navbar() {
                       ))}
                     </div>
 
-                    <div className="border-t border-white/[0.06] mt-4 pt-4 flex items-center justify-between px-4">
+                    <div className="border-t border-black/[0.06] mt-4 pt-4 flex items-center justify-between px-4">
                       <span className="text-xs text-neutral-500">
                         Infraestrutura de aquisição completa
                       </span>
                       <Link
                         href="/servicos"
                         onClick={() => setMegaOpen(false)}
-                        className="flex items-center gap-1.5 text-xs text-emerald-400 hover:text-emerald-300 transition-colors font-medium"
+                        className="flex items-center gap-1.5 text-xs text-emerald-600 hover:text-emerald-700 transition-colors font-semibold"
                       >
                         Ver todos <ArrowRight className="w-3 h-3" />
                       </Link>
@@ -154,12 +155,11 @@ export function Navbar() {
           </div>
 
           {/* CTA */}
-          <Link
-            href="/diagnostico"
-            className="hidden lg:flex items-center text-sm font-medium text-white bg-gradient-to-b from-emerald-400 to-emerald-600 rounded-full border-t border-white/25 px-6 py-2.5 shadow-[0_0_20px_-3px_rgba(16,185,129,0.5)] hover:shadow-[0_0_30px_-3px_rgba(16,185,129,0.7)] hover:brightness-110 transition-all duration-300"
-          >
-            Agendar diagnóstico
-          </Link>
+          <div className="hidden lg:block">
+            <CTAButton variant="navbar" size="md">
+              Agendar diagnóstico
+            </CTAButton>
+          </div>
 
           {/* Mobile */}
           <button
@@ -244,13 +244,11 @@ export function Navbar() {
               ))}
             </div>
 
-            <Link
-              href="/diagnostico"
-              onClick={() => setMobileOpen(false)}
-              className="block w-full text-center text-base font-medium text-white bg-gradient-to-r from-emerald-600 to-emerald-500 rounded-xl py-4 mt-6 shadow-[0_4px_20px_rgba(16,185,129,0.4)]"
-            >
-              Agendar diagnóstico
-            </Link>
+            <div className="mt-6">
+              <CTAButton variant="sidebar" size="lg" className="w-full !rounded-xl py-4">
+                Agendar diagnóstico
+              </CTAButton>
+            </div>
           </div>
         </div>
       )}

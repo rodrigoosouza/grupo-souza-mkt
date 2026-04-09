@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { CTAButton } from "@/components/forms/cta-button";
 
 export function CTAFinal() {
   return (
@@ -13,7 +13,6 @@ export function CTAFinal() {
         "--border-radius-before": "24px",
       }}
     >
-      {/* Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-emerald-500/[0.08] blur-[120px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 text-center max-w-3xl mx-auto">
@@ -29,10 +28,10 @@ export function CTAFinal() {
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center mb-8">
-          <Button variant="primary-glow" size="lg" href="/diagnostico">
+          <CTAButton variant="primary-glow" size="lg">
             Agendar diagnóstico gratuito
             <ArrowRight className="w-4 h-4" />
-          </Button>
+          </CTAButton>
         </div>
 
         <p className="text-xs text-neutral-500 font-mono">

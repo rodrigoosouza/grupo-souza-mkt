@@ -1,5 +1,5 @@
 import { Check, X, Sparkles, AlertTriangle, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { CTAButton } from "@/components/forms/cta-button";
 
 const FOR = [
   {
@@ -161,13 +161,12 @@ export function WhoItsFor() {
                 </ul>
 
                 {/* CTA */}
-                <Link
-                  href="/diagnostico"
-                  className="mt-8 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-black font-bold text-sm px-5 py-3 shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_40px_rgba(16,185,129,0.5)] transition-all font-sans"
-                >
-                  Quero falar com vocês
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+                <div className="mt-8">
+                  <CTAButton variant="sidebar" size="md" className="!rounded-xl">
+                    Quero falar com vocês
+                    <ArrowRight className="w-4 h-4" />
+                  </CTAButton>
+                </div>
               </div>
             </div>
           </div>

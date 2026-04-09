@@ -121,7 +121,9 @@ export default async function BlogPostPage({
       url: BASE_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${BASE_URL}/rodrigo-souza.png`,
+        url: `${BASE_URL}/opengraph-image`,
+        width: 1200,
+        height: 630,
       },
     },
     mainEntityOfPage: {

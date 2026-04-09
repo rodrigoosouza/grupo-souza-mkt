@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { CTAButton } from "@/components/forms/cta-button";
 import {
   Sparkles,
   ArrowRight,
@@ -49,10 +50,10 @@ export function Hero() {
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-4 mb-20 items-center animate-entry delay-300">
-            <Button variant="primary-glow" size="lg" href="/diagnostico">
+            <CTAButton variant="primary-glow" size="lg">
               Agendar diagnóstico gratuito
               <ArrowRight className="w-4 h-4" />
-            </Button>
+            </CTAButton>
             <Button variant="secondary" size="lg" href="#como-funciona">
               Ver como funciona
             </Button>

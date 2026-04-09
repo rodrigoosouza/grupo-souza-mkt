@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ScrollAnimations } from "@/components/layout/scroll-animations";
+import { DiagnosticModalProvider } from "@/components/forms/diagnostic-modal";
 import "./globals.css";
 
 const inter = Inter({
@@ -110,10 +111,12 @@ export default function RootLayout({
         </div>
 
         {/* Content */}
-        <Navbar />
-        <main className="relative z-10 flex-1">{children}</main>
-        <Footer />
-        <ScrollAnimations />
+        <DiagnosticModalProvider>
+          <Navbar />
+          <main className="relative z-10 flex-1">{children}</main>
+          <Footer />
+          <ScrollAnimations />
+        </DiagnosticModalProvider>
       </body>
     </html>
   );
