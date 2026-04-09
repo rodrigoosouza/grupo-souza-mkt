@@ -9,15 +9,23 @@ import {
   POSTS_PER_PAGE,
 } from "@/lib/blog";
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const allPosts = getAllPosts();
   const params: { slug: string; page: string }[] = [];
   for (const slug of getAllCategories()) {
     const filtered = allPosts.filter((p) => p.category === slug);
     const total = getTotalPages(filtered, POSTS_PER_PAGE);
-    // Pagina 1 vive em /blog/categoria/[slug]
     for (let i = 2; i <= total; i++) {
       params.push({ slug, page: String(i) });
+    }
+  }
+  // Static export exige >=1 path. Placeholder 404 graceful se nao ha pagina 2+
+  if (params.length === 0) {
+    const cats = getAllCategories();
+    if (cats.length > 0) {
+      params.push({ slug: cats[0], page: "_placeholder" });
     }
   }
   return params;
