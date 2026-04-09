@@ -93,6 +93,8 @@ export default async function BlogPostPage({
   const toc = post.toc ? extractToc(post.content) : [];
   const url = `${BASE_URL}/blog/${post.slug}`;
   const ogImage = post.og_image || `${url}/opengraph-image`;
+  // Cover: usa custom se houver, senao usa o OG dinamico (gerado automaticamente)
+  const coverImage = post.cover || `/blog/${post.slug}/opengraph-image`;
   const leadMagnet = post.lead_magnet || DEFAULT_LEAD_MAGNET;
 
   // ============ JSON-LD ============
@@ -206,8 +208,22 @@ export default async function BlogPostPage({
             </Link>
           </div>
 
+          {/* Cover image (acima do header) */}
+          <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-10 ring-1 ring-white/[0.08] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] [animation:animationIn_0.8s_ease-out_0.15s_both] animate-on-scroll">
+            <Image
+              src={coverImage}
+              alt={post.cover_alt || post.title}
+              fill
+              sizes="(max-width: 1024px) 100vw, 768px"
+              className="object-cover"
+              priority
+              unoptimized={!post.cover}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+          </div>
+
           {/* Header */}
-          <header className="mb-10 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
+          <header className="mb-12 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
             <CategoryBadge category={post.category} className="mb-5" />
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6">
@@ -251,20 +267,6 @@ export default async function BlogPostPage({
             </div>
           </header>
 
-          {/* Cover image */}
-          {post.cover && (
-            <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-12 ring-1 ring-white/[0.08] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] [animation:animationIn_0.8s_ease-out_0.25s_both] animate-on-scroll">
-              <Image
-                src={post.cover}
-                alt={post.cover_alt || post.title}
-                fill
-                sizes="(max-width: 1024px) 100vw, 768px"
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-            </div>
-          )}
 
           {/* TOC inline */}
           {toc.length >= 3 && (
