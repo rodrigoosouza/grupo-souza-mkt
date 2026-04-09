@@ -1,42 +1,45 @@
 import { CATEGORY_LABELS } from "@/lib/blog";
 
-const CATEGORY_COLORS: Record<string, { bg: string; text: string; border: string }> = {
+const CATEGORY_COLORS: Record<
+  string,
+  { text: string; border: string; dot: string }
+> = {
   "trafego-pago": {
-    bg: "bg-emerald-500/10",
-    text: "text-emerald-400",
-    border: "border-emerald-500/20",
+    text: "text-emerald-300",
+    border: "border-emerald-400/40",
+    dot: "bg-emerald-400",
   },
   "tracking-dados": {
-    bg: "bg-blue-500/10",
-    text: "text-blue-400",
-    border: "border-blue-500/20",
+    text: "text-sky-300",
+    border: "border-sky-400/40",
+    dot: "bg-sky-400",
   },
   "cro-conversao": {
-    bg: "bg-amber-500/10",
-    text: "text-amber-400",
-    border: "border-amber-500/20",
+    text: "text-amber-300",
+    border: "border-amber-400/40",
+    dot: "bg-amber-400",
   },
   automacao: {
-    bg: "bg-purple-500/10",
-    text: "text-purple-400",
-    border: "border-purple-500/20",
+    text: "text-fuchsia-300",
+    border: "border-fuchsia-400/40",
+    dot: "bg-fuchsia-400",
   },
   "aieo-geo": {
-    bg: "bg-cyan-500/10",
-    text: "text-cyan-400",
-    border: "border-cyan-500/20",
+    text: "text-cyan-300",
+    border: "border-cyan-400/40",
+    dot: "bg-cyan-400",
   },
   growth: {
-    bg: "bg-emerald-500/10",
-    text: "text-emerald-400",
-    border: "border-emerald-500/20",
+    text: "text-emerald-300",
+    border: "border-emerald-400/40",
+    dot: "bg-emerald-400",
   },
 };
 
 const DEFAULT_COLORS = {
-  bg: "bg-gray-500/10",
-  text: "text-gray-400",
-  border: "border-gray-500/20",
+  text: "text-neutral-200",
+  border: "border-neutral-400/40",
+  dot: "bg-neutral-400",
 };
 
 interface CategoryBadgeProps {
@@ -50,8 +53,9 @@ export function CategoryBadge({ category, className = "" }: CategoryBadgeProps) 
 
   return (
     <span
-      className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border ${colors.bg} ${colors.text} ${colors.border} ${className}`}
+      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider border bg-black/75 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.6)] ${colors.text} ${colors.border} ${className}`}
     >
+      <span className={`w-1.5 h-1.5 rounded-full ${colors.dot} shadow-[0_0_8px_currentColor]`} />
       {label}
     </span>
   );
