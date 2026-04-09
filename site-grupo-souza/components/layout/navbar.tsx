@@ -64,8 +64,8 @@ export function Navbar() {
           {/* Logo */}
           <Logo size={32} />
 
-          {/* Center nav — pill style (Luminous reference) */}
-          <div className="hidden lg:flex items-center bg-white/[0.04] border border-white/[0.08] rounded-full px-1.5 py-1.5 backdrop-blur-md">
+          {/* Center nav — pill style (white glass) */}
+          <div className="hidden lg:flex items-center bg-white/95 border border-white/40 rounded-full px-1.5 py-1.5 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
             {/* Serviços com mega menu */}
             <div
               onMouseEnter={handleMouseEnter}
@@ -73,10 +73,10 @@ export function Navbar() {
               className="relative"
             >
               <button
-                className={`flex items-center gap-1.5 px-5 py-2 text-sm rounded-full transition-all duration-200 ${
+                className={`flex items-center gap-1.5 px-5 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
                   megaOpen
-                    ? "text-white bg-white/[0.08] shadow-inner"
-                    : "text-neutral-400 hover:text-white"
+                    ? "text-black bg-black/[0.06] shadow-inner"
+                    : "text-neutral-700 hover:text-black hover:bg-black/[0.04]"
                 }`}
               >
                 <span className={`w-1.5 h-1.5 rounded-full transition-colors duration-200 ${megaOpen ? "bg-emerald-500" : "bg-transparent"}`} />
@@ -146,7 +146,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-5 py-2 text-sm text-neutral-400 hover:text-white rounded-full transition-colors"
+                className="px-5 py-2 text-sm font-medium text-neutral-700 hover:text-black hover:bg-black/[0.04] rounded-full transition-all"
               >
                 {link.label}
               </Link>

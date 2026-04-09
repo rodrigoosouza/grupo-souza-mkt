@@ -71,10 +71,9 @@ export function LogoMark({ size = 32, className = "" }: { size?: number; classNa
   );
 }
 
-export function Logo({ size = 32, iconOnly = false, asLink = true, className = "" }: LogoProps) {
+export function Logo({ iconOnly = false, asLink = true, className = "" }: LogoProps) {
   const content = (
-    <div className={`inline-flex items-center gap-2.5 ${className}`}>
-      <LogoMark size={size} />
+    <div className={`inline-flex items-center ${className}`}>
       {!iconOnly && (
         <span className="text-xl font-bold tracking-tight leading-none">
           GRUPO{" "}
