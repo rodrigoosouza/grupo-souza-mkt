@@ -18,6 +18,7 @@ import {
   DEFAULT_LEAD_MAGNET,
 } from "@/components/blog/sticky-lead-magnet";
 import { mdxComponents } from "@/components/blog/mdx-components";
+import { CTAButton } from "@/components/forms/cta-button";
 import { extractToc } from "@/lib/toc";
 
 const BASE_URL = "https://gruposouza.com.br";
@@ -299,13 +300,10 @@ export default async function BlogPostPage({
               Agende um diagnóstico gratuito e descubra como aplicar essas
               estratégias no seu negócio.
             </p>
-            <Link
-              href="/diagnostico"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500 text-black font-semibold text-sm hover:bg-emerald-400 transition-colors"
-            >
+            <CTAButton variant="primary-glow" size="lg">
               Agendar diagnóstico
               <ArrowRight className="w-4 h-4" />
-            </Link>
+            </CTAButton>
           </div>
           </div>
 

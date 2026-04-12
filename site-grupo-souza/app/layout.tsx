@@ -3,7 +3,9 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ScrollAnimations } from "@/components/layout/scroll-animations";
+import { WhatsAppButton } from "@/components/layout/whatsapp-button";
 import { DiagnosticModalProvider } from "@/components/forms/diagnostic-modal";
+import { ConsentBanner } from "@/components/layout/consent-banner";
 import "./globals.css";
 
 const inter = Inter({
@@ -103,6 +105,43 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable} h-full`}
     >
       <body className="min-h-full flex flex-col overflow-x-hidden">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Grupo Souza MKT",
+              "url": "https://gruposouza.com.br",
+              "description": "Agência de growth marketing e infraestrutura de aquisição. Tráfego pago, tracking avançado, landing pages, automação, CRM, dashboards e AIEO/GEO.",
+              "foundingDate": "2025",
+              "founder": {
+                "@type": "Person",
+                "name": "Rodrigo Souza",
+                "url": "https://gruposouza.com.br/sobre",
+                "sameAs": [
+                  "https://www.instagram.com/rodrigosouzadomarketing/",
+                  "https://www.linkedin.com/in/rodrigosouzamkt"
+                ]
+              },
+              "sameAs": [
+                "https://www.instagram.com/gruposouzamkt/",
+                "https://wa.me/5519996022561"
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+55-19-99602-2561",
+                "contactType": "sales",
+                "availableLanguage": "Portuguese"
+              },
+              "areaServed": {
+                "@type": "Country",
+                "name": "Brazil"
+              },
+              "knowsAbout": ["Growth Marketing", "Google Ads", "Meta Ads", "Google Tag Manager", "GA4", "Landing Pages", "CRO", "Marketing Automation", "AIEO", "GEO"]
+            }),
+          }}
+        />
         {/* Background effects */}
         <div className="fixed inset-0 z-0 pointer-events-none">
           <div className="stars absolute inset-0" />
@@ -115,6 +154,8 @@ export default function RootLayout({
           <Navbar />
           <main className="relative z-10 flex-1 pt-[72px]">{children}</main>
           <Footer />
+          <ConsentBanner />
+          <WhatsAppButton />
           <ScrollAnimations />
         </DiagnosticModalProvider>
       </body>
