@@ -16,7 +16,7 @@ export default function HistoriasPage() {
   return (
     <>
       {/* ============ HERO ============ */}
-      <section className="relative overflow-hidden pt-20 md:pt-28 pb-16">
+      <section className="relative overflow-hidden pt-8 md:pt-12 pb-16">
         <div className="absolute top-[-30%] left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-emerald-500/[0.07] blur-[160px] rounded-full pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.02] pointer-events-none"

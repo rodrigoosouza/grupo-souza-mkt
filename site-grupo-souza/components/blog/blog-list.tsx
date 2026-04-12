@@ -36,7 +36,7 @@ export function BlogList({ page, category }: BlogListProps) {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
+      <section className="relative pt-8 md:pt-12 pb-16 overflow-hidden">
         <div className="absolute inset-0 dot-grid opacity-30" />
         <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-emerald-900/20 blur-[100px] rounded-full" />
 

@@ -62,7 +62,7 @@ export default async function CasePage({
           }}
         />
 
-        <div className="max-w-5xl mx-auto px-4 md:px-6 relative z-10 pt-20 md:pt-28 pb-12">
+        <div className="max-w-5xl mx-auto px-4 md:px-6 relative z-10 pt-8 md:pt-12 pb-12">
           <Link
             href="/historias"
             className="inline-flex items-center gap-1.5 text-xs text-neutral-500 hover:text-emerald-400 transition-colors group font-mono mb-8"

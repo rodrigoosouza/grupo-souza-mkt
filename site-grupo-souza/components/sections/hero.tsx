@@ -16,7 +16,7 @@ export function Hero() {
       <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[900px] h-[700px] bg-emerald-500/[0.06] blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-emerald-900/[0.08] blur-[120px] rounded-full pointer-events-none" />
 
-      <main className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8 lg:pt-24 max-w-7xl mx-auto pt-16 px-4 sm:px-6 pb-20 relative items-center">
+      <main className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8 lg:pt-12 max-w-7xl mx-auto pt-8 px-4 sm:px-6 pb-20 relative items-center">
         {/* Left Column */}
         <div className="lg:col-span-7 flex flex-col relative items-start z-10">
           {/* Tag */}

@@ -113,7 +113,7 @@ export default function RootLayout({
         {/* Content */}
         <DiagnosticModalProvider>
           <Navbar />
-          <main className="relative z-10 flex-1">{children}</main>
+          <main className="relative z-10 flex-1 pt-[72px]">{children}</main>
           <Footer />
           <ScrollAnimations />
         </DiagnosticModalProvider>

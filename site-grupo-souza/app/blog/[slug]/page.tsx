@@ -193,7 +193,7 @@ export default async function BlogPostPage({
         />
       )}
 
-      <article className="relative pt-32 pb-20">
+      <article className="relative pt-8 md:pt-12 pb-20">
         <div className="absolute inset-0 dot-grid opacity-20" />
         <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-emerald-900/15 blur-[100px] rounded-full" />
 
