@@ -18,7 +18,7 @@ export default function BlogPage() {
 
       {/* Newsletter CTA */}
       <section className="relative py-20">
-        <div className="max-w-2xl mx-auto px-6">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6">
           <div className="[animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll rounded-2xl border border-white/[0.06] bg-[#0A0A0A] p-8 md:p-10 text-center">
             <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
               <Mail className="w-5 h-5 text-emerald-400" />

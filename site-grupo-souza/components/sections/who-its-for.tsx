@@ -49,7 +49,7 @@ const NOT_FOR = [
 
 export function WhoItsFor() {
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-16 md:py-32 overflow-hidden">
       {/* Background atmospherics */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-600/[0.08] blur-[140px] rounded-full pointer-events-none" />
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-red-500/[0.04] blur-[140px] rounded-full pointer-events-none" />
@@ -69,7 +69,7 @@ export function WhoItsFor() {
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             Filtro honesto · 30 segundos
           </span>
-          <h2 className="text-5xl md:text-7xl font-sans font-bold tracking-[-3px] text-white mb-6 leading-[0.95]">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-sans font-bold tracking-[-3px] text-white mb-6 leading-[0.95]">
             Você está
             <br />
             <span className="bg-gradient-to-r from-emerald-300 via-emerald-400 to-emerald-600 bg-clip-text text-transparent">
@@ -96,7 +96,7 @@ export function WhoItsFor() {
             <div className="absolute -inset-px rounded-3xl bg-gradient-to-br from-emerald-400/60 via-emerald-500/20 to-transparent opacity-100 group-hover:opacity-100 transition-opacity duration-700 blur-[1px]" />
             <div className="absolute -inset-4 rounded-3xl bg-emerald-500/10 blur-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
-            <div className="relative h-full rounded-3xl bg-gradient-to-br from-[#0B1410] via-[#070D0A] to-black p-10 md:p-12 overflow-hidden">
+            <div className="relative h-full rounded-3xl bg-gradient-to-br from-[#0B1410] via-[#070D0A] to-black p-5 sm:p-8 md:p-12 overflow-hidden">
               {/* Top bar */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent" />
 
@@ -125,7 +125,7 @@ export function WhoItsFor() {
                     <div className="text-[10px] uppercase tracking-[3px] font-mono text-emerald-500 font-bold mb-1">
                       Match perfeito
                     </div>
-                    <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight font-sans">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight font-sans">
                       Pra você se...
                     </h3>
                   </div>
@@ -175,7 +175,7 @@ export function WhoItsFor() {
           <div className="group relative">
             <div className="absolute -inset-px rounded-3xl bg-gradient-to-br from-white/[0.08] via-white/[0.02] to-transparent" />
 
-            <div className="relative h-full rounded-3xl bg-gradient-to-br from-[#0A0A0A] via-[#070707] to-black p-10 md:p-12 overflow-hidden">
+            <div className="relative h-full rounded-3xl bg-gradient-to-br from-[#0A0A0A] via-[#070707] to-black p-5 sm:p-8 md:p-12 overflow-hidden">
               {/* Top bar */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-500/30 to-transparent" />
 
@@ -198,7 +198,7 @@ export function WhoItsFor() {
                     <div className="text-[10px] uppercase tracking-[3px] font-mono text-neutral-500 font-bold mb-1">
                       Não combinamos
                     </div>
-                    <h3 className="text-3xl md:text-4xl font-bold text-neutral-400 tracking-tight font-sans">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-400 tracking-tight font-sans">
                       Não é pra você se...
                     </h3>
                   </div>

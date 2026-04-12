@@ -15,7 +15,7 @@ const ITEMS = [
 
 export function Marquee() {
   return (
-    <div className="overflow-hidden relative py-8 border-y border-white/5">
+    <div className="overflow-hidden relative py-6 sm:py-8 border-y border-white/5">
       <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#050505] to-transparent z-10" />
       <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#050505] to-transparent z-10" />
       <div className="flex w-[200%] animate-marquee">

@@ -4,7 +4,7 @@ import { CTAButton } from "@/components/forms/cta-button";
 export function CTAFinal() {
   return (
     <section
-      className="[animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll bg-gradient-to-tr from-white/0 via-white/10 to-white/0 max-w-7xl rounded-3xl mx-2.5 lg:mx-auto mb-24 p-10 md:p-20 relative overflow-hidden"
+      className="[animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll bg-gradient-to-tr from-white/0 via-white/10 to-white/0 max-w-7xl rounded-3xl mx-2.5 lg:mx-auto mb-24 p-6 sm:p-10 md:p-20 relative overflow-hidden"
       style={{
         position: "relative",
         // @ts-expect-error CSS custom properties

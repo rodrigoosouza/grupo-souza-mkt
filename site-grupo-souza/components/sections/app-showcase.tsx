@@ -40,15 +40,16 @@ export function AppShowcase() {
           <div className="-top-10 -right-10 bg-emerald-500/10 w-56 h-56 rounded-full absolute blur-3xl" />
 
           {/* Top bar */}
-          <div className="flex sm:px-6 bg-white/5 border-white/5 border-b pt-3 pr-4 pb-3 pl-4 backdrop-blur-md items-center justify-between">
-            <div className="flex items-center gap-3 text-sm text-neutral-400">
-              <a className="inline-flex items-center gap-2 text-white hover:text-emerald-400 transition-colors font-sans" href="#">
-                <Zap className="text-emerald-500" size={16} />
-                Grupo Souza OS
+          <div className="flex sm:px-6 bg-white/5 border-white/5 border-b pt-3 pr-3 pb-3 pl-3 sm:pr-4 sm:pl-4 backdrop-blur-md items-center justify-between overflow-x-auto">
+            <div className="flex items-center gap-2 sm:gap-3 text-sm text-neutral-400 min-w-0">
+              <a className="inline-flex items-center gap-2 text-white hover:text-emerald-400 transition-colors font-sans whitespace-nowrap" href="#">
+                <Zap className="text-emerald-500 flex-shrink-0" size={16} />
+                <span className="hidden sm:inline">Grupo Souza OS</span>
+                <span className="sm:hidden">GS OS</span>
               </a>
               <span className="opacity-40 font-sans">/</span>
-              <span className="text-white font-sans">Performance</span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20 px-2 py-0.5 text-[11px] font-sans">
+              <span className="text-white font-sans whitespace-nowrap">Performance</span>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20 px-2 py-0.5 text-[11px] font-sans whitespace-nowrap">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 Ao Vivo
               </span>
@@ -73,7 +74,7 @@ export function AppShowcase() {
           {/* Desktop layout */}
           <div className="grid grid-cols-12">
             {/* Left sidebar */}
-            <aside className="hidden md:flex md:col-span-3 lg:col-span-2 flex-col min-h-[520px] bg-white/5 border-white/5 border-r">
+            <aside className="hidden md:flex md:col-span-3 lg:col-span-2 flex-col md:min-h-[520px] bg-white/5 border-white/5 border-r">
               <div className="px-4 py-4">
                 <button className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-900/20 text-sm hover:brightness-110 transition-all px-3 py-2 border border-white/10 font-sans">
                   <Plus size={16} />
@@ -131,7 +132,7 @@ export function AppShowcase() {
             </aside>
 
             {/* Center content */}
-            <main className="col-span-12 md:col-span-6 lg:col-span-7 min-h-[520px] bg-black/20">
+            <main className="col-span-12 md:col-span-6 lg:col-span-7 md:min-h-[520px] bg-black/20">
               {/* Tabs */}
               <div className="px-4 sm:px-6 py-3 border-b border-white/5 overflow-x-auto">
                 <div className="flex items-center gap-6 min-w-max">
@@ -281,7 +282,7 @@ export function AppShowcase() {
             </main>
 
             {/* Right sidebar */}
-            <aside className="hidden md:block md:col-span-3 lg:col-span-3 bg-white/5 border-l border-white/5 min-h-[520px]">
+            <aside className="hidden md:block md:col-span-3 lg:col-span-3 bg-white/5 border-l border-white/5 md:min-h-[520px]">
               <div className="px-4 sm:px-5 py-4 space-y-4">
                 {/* Quick Stats */}
                 <div className="rounded-xl ring-1 ring-white/10 bg-black/20 p-4">

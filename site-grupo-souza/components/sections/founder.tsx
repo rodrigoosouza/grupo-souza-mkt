@@ -24,7 +24,7 @@ const SKILLS = [
 export function Founder() {
   return (
     <section
-      className="[animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll bg-gradient-to-tr from-white/0 via-white/[0.06] to-white/0 max-w-7xl rounded-3xl mt-24 mx-2.5 lg:mx-auto mb-24 p-8 md:p-12 relative overflow-hidden"
+      className="[animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll bg-gradient-to-tr from-white/0 via-white/[0.06] to-white/0 max-w-7xl rounded-3xl mt-24 mx-2.5 lg:mx-auto mb-24 p-5 sm:p-8 md:p-12 relative overflow-hidden"
       style={{
         position: "relative",
         // @ts-expect-error CSS custom properties

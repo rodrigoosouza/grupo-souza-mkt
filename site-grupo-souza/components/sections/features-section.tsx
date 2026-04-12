@@ -66,7 +66,7 @@ const TABLE_ROWS = [
 export function FeaturesSection() {
   return (
     <section
-      className="[animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll bg-gradient-to-tr from-white/0 via-white/10 to-white/0 max-w-7xl rounded-3xl mt-24 mx-2.5 lg:mx-auto mb-24 p-10 relative"
+      className="[animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll bg-gradient-to-tr from-white/0 via-white/10 to-white/0 max-w-7xl rounded-3xl mt-24 mx-2.5 lg:mx-auto mb-24 p-5 sm:p-8 md:p-10 relative"
       style={{
         position: "relative",
         // @ts-expect-error CSS custom properties
@@ -112,12 +112,12 @@ export function FeaturesSection() {
       {/* Main Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 mt-12 mb-12 gap-x-8 gap-y-8">
         {/* Left Card — Services + Table */}
-        <div className="md:p-10 flex flex-col overflow-hidden group/card hover:border-white/20 transition-colors duration-500 bg-[#0A0A0A] border-white/10 border rounded-3xl p-8 relative justify-between">
+        <div className="md:p-10 flex flex-col overflow-hidden group/card hover:border-white/20 transition-colors duration-500 bg-[#0A0A0A] border-white/10 border rounded-3xl p-5 sm:p-8 relative justify-between">
           {/* Background gradient hint */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none transition-opacity duration-500 opacity-50 group-hover/card:opacity-100" />
 
           {/* Top Icons Row — 4x2 grid of services */}
-          <div className="grid grid-cols-4 gap-4 mb-12 relative z-10">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 relative z-10">
             {SERVICES.map((service) => (
               <Link
                 key={service.href}
@@ -136,15 +136,15 @@ export function FeaturesSection() {
 
           {/* Data Table */}
           <div className="mb-10 relative z-10">
-            <div className="grid grid-cols-4 text-sm font-medium text-white mb-4 px-2">
-              <div className="col-span-2 font-sans">Serviço</div>
+            <div className="grid grid-cols-3 sm:grid-cols-4 text-sm font-medium text-white mb-4 px-2">
+              <div className="col-span-1 sm:col-span-2 font-sans">Serviço</div>
               <div className="text-right text-neutral-400 font-sans">Tipo</div>
               <div className="text-right text-neutral-400 font-sans">Status</div>
             </div>
             {TABLE_ROWS.map((row, index) => (
               <div
                 key={index}
-                className={`grid grid-cols-4 text-sm text-neutral-400 py-4 border-t border-white/5 px-2 rounded-lg ${
+                className={`grid grid-cols-3 sm:grid-cols-4 text-sm text-neutral-400 py-4 border-t border-white/5 px-2 rounded-lg ${
                   index === 1
                     ? "relative overflow-hidden group"
                     : "hover:bg-white/[0.02] transition-colors"
@@ -154,7 +154,7 @@ export function FeaturesSection() {
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity" />
                 )}
                 <div
-                  className={`col-span-2 flex items-center gap-2 ${
+                  className={`col-span-1 sm:col-span-2 flex items-center gap-2 ${
                     index === 1 ? "text-white relative z-10" : "text-neutral-300"
                   } font-sans`}
                 >
@@ -208,7 +208,7 @@ export function FeaturesSection() {
         </div>
 
         {/* Right Card — Orbital Visual */}
-        <div className="overflow-hidden min-h-[450px] flex items-center justify-center bg-[#0A0A0A] border-white/10 border rounded-3xl relative group/orbit">
+        <div className="overflow-hidden min-h-[350px] sm:min-h-[450px] flex items-center justify-center bg-[#0A0A0A] border-white/10 border rounded-3xl relative group/orbit">
           {/* Background Gradient */}
           <div className="opacity-80 absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(16,185,129,0.15)_0%,_rgba(0,0,0,0)_70%)]" />
 
@@ -259,7 +259,7 @@ export function FeaturesSection() {
       </div>
 
       {/* Bottom Features */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5 pt-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 border-t border-white/5 pt-8 md:pt-12">
         <div className="flex flex-col items-start group">
           <div className="w-8 h-px bg-neutral-700 mb-6 group-hover:bg-emerald-500 transition-colors duration-300" />
           <Target className="text-neutral-400 mb-5 group-hover:text-emerald-500 transition-colors duration-300" size={24} strokeWidth={1.5} />

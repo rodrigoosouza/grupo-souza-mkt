@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Check, ArrowRight, X, Sparkles, AlertTriangle } from "lucide-react";
 import { SERVICES, getServiceBySlug, getAllServiceSlugs } from "@/content/services";
-import { Button } from "@/components/ui/button";
+import { CTAButton } from "@/components/forms/cta-button";
 import { Accordion } from "@/components/ui/accordion";
 
 export async function generateStaticParams() {
@@ -84,10 +84,10 @@ export default async function ServicePage({
             </p>
 
             <div className="[animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll">
-              <Button variant="primary-glow" size="lg" href="/diagnostico">
+              <CTAButton variant="primary-glow" size="lg">
                 Agendar diagnóstico gratuito
                 <ArrowRight className="w-4 h-4" />
-              </Button>
+              </CTAButton>
             </div>
           </div>
         </div>
@@ -392,10 +392,10 @@ export default async function ServicePage({
                   Agende um diagnóstico gratuito de 30 minutos. A gente analisa
                   o que faz sentido pro seu momento.
                 </p>
-                <Button variant="primary-glow" href="/diagnostico">
+                <CTAButton variant="primary-glow">
                   Agendar diagnóstico
                   <ArrowRight className="w-4 h-4" />
-                </Button>
+                </CTAButton>
               </div>
             </div>
           </div>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, TrendingUp, TrendingDown, Quote } from "lucide-react";
 import { getAllCases } from "@/content/cases";
-import { Button } from "@/components/ui/button";
+import { CTAButton } from "@/components/forms/cta-button";
 
 export const metadata: Metadata = {
   title: "Histórias de Clientes",
@@ -191,10 +191,10 @@ export default function HistoriasPage() {
                 Agende um diagnóstico gratuito de 30 minutos. A gente analisa
                 seu funil atual e mostra exatamente o que muda em 60-90 dias.
               </p>
-              <Button variant="primary-glow" size="lg" href="/diagnostico">
+              <CTAButton variant="primary-glow" size="lg">
                 Agendar diagnóstico gratuito
                 <ArrowRight className="w-4 h-4" />
-              </Button>
+              </CTAButton>
             </div>
           </div>
         </div>

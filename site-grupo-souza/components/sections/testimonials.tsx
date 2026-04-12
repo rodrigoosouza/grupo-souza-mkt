@@ -43,7 +43,7 @@ export function Testimonials() {
         {TESTIMONIALS.map((t, i) => (
           <div
             key={i}
-            className="group rounded-2xl border border-white/[0.06] bg-[#0A0A0A] p-7 hover:border-emerald-500/15 transition-all duration-500 relative overflow-hidden flex flex-col"
+            className="group rounded-2xl border border-white/[0.06] bg-[#0A0A0A] p-5 sm:p-7 hover:border-emerald-500/15 transition-all duration-500 relative overflow-hidden flex flex-col"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/[0.04] blur-[60px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 

@@ -48,14 +48,14 @@ export function Results() {
         {STATS.map((stat) => (
           <div
             key={stat.label}
-            className="group rounded-2xl border border-white/[0.06] bg-[#0A0A0A] p-6 hover:border-emerald-500/20 hover:bg-emerald-500/[0.02] transition-all duration-500 relative overflow-hidden"
+            className="group rounded-2xl border border-white/[0.06] bg-[#0A0A0A] p-4 sm:p-6 hover:border-emerald-500/20 hover:bg-emerald-500/[0.02] transition-all duration-500 relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/[0.04] blur-[60px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             <div className="relative">
               <div className="w-10 h-10 rounded-lg bg-emerald-500/[0.08] border border-emerald-500/[0.15] flex items-center justify-center mb-5 group-hover:border-emerald-500/30 transition-colors">
                 <stat.icon className="w-4 h-4 text-emerald-400" />
               </div>
-              <div className="text-4xl md:text-5xl font-bold text-white tracking-tight font-sans mb-2">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight font-sans mb-2">
                 {stat.value}
               </div>
               <div className="text-sm text-emerald-400 font-medium font-sans mb-1">

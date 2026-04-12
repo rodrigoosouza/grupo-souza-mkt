@@ -39,7 +39,7 @@ export function Process() {
   return (
     <section
       id="como-funciona"
-      className="[animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll bg-gradient-to-tr from-white/0 via-white/10 to-white/0 max-w-7xl rounded-3xl mt-24 mx-2.5 lg:mx-auto mb-24 p-10 relative"
+      className="[animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll bg-gradient-to-tr from-white/0 via-white/10 to-white/0 max-w-7xl rounded-3xl mt-24 mx-2.5 lg:mx-auto mb-24 p-5 sm:p-8 md:p-10 relative"
       style={{
         position: "relative",
         // @ts-expect-error CSS custom properties
@@ -64,12 +64,12 @@ export function Process() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {STEPS.map((step, index) => (
           <div key={index} className="relative group">
             {/* Connector */}
             {index < STEPS.length - 1 && (
-              <div className="hidden md:block absolute top-6 left-[56px] -right-8 h-px overflow-hidden">
+              <div className="hidden md:block absolute top-6 left-[56px] -right-8 h-px overflow-hidden pointer-events-none">
                 <div className="h-full bg-gradient-to-r from-emerald-500/60 via-emerald-500/30 to-emerald-500/10" />
                 {/* Pulse traveling */}
                 <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-transparent via-emerald-400 to-transparent opacity-80 animate-[connector-pulse_2.8s_ease-in-out_infinite]" style={{ animationDelay: `${index * 0.6}s` }} />

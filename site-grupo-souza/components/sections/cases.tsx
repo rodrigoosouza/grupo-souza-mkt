@@ -55,7 +55,7 @@ export function Cases() {
         {CASES.map((c, i) => (
           <div
             key={i}
-            className="group rounded-2xl border border-white/[0.06] bg-[#0A0A0A] p-6 hover:border-emerald-500/20 transition-all duration-500 relative overflow-hidden"
+            className="group rounded-2xl border border-white/[0.06] bg-[#0A0A0A] p-4 sm:p-6 hover:border-emerald-500/20 transition-all duration-500 relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-40 h-40 bg-emerald-500/[0.04] blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 

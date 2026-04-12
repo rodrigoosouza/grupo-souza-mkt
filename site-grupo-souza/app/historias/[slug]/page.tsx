@@ -16,7 +16,7 @@ import {
   getAllCaseSlugs,
   getCaseBySlug,
 } from "@/content/cases";
-import { Button } from "@/components/ui/button";
+import { CTAButton } from "@/components/forms/cta-button";
 
 export async function generateStaticParams() {
   return getAllCaseSlugs().map((slug) => ({ slug }));
@@ -315,10 +315,10 @@ export default async function CasePage({
                 Agende um diagnóstico gratuito de 30 minutos. A gente audita
                 seu funil e mostra o caminho.
               </p>
-              <Button variant="primary-glow" href="/diagnostico">
+              <CTAButton variant="primary-glow">
                 Agendar diagnóstico
                 <ArrowRight className="w-4 h-4" />
-              </Button>
+              </CTAButton>
             </div>
           </div>
         </div>

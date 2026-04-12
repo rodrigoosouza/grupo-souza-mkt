@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Sparkles, Zap, Layers } from "lucide-react";
 import { SERVICES } from "@/content/services";
-import { Button } from "@/components/ui/button";
+import { CTAButton } from "@/components/forms/cta-button";
 
 export const metadata: Metadata = {
   title: "Serviços",
@@ -183,10 +183,10 @@ export default function ServicosPage() {
                 Agende um diagnóstico gratuito. A gente analisa seu funil atual
                 e mostra exatamente onde está vazando dinheiro.
               </p>
-              <Button variant="primary-glow" size="lg" href="/diagnostico">
+              <CTAButton variant="primary-glow" size="lg">
                 Agendar diagnóstico gratuito
                 <ArrowRight className="w-4 h-4" />
-              </Button>
+              </CTAButton>
             </div>
           </div>
         </div>

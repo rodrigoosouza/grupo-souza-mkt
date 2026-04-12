@@ -291,7 +291,7 @@ export default async function BlogPostPage({
           </div>
 
           {/* CTA */}
-          <div className="mt-12 p-8 rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.03] text-center [animation:animationIn_0.8s_ease-out_0.5s_both] animate-on-scroll">
+          <div className="mt-12 p-5 sm:p-8 rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.03] text-center [animation:animationIn_0.8s_ease-out_0.5s_both] animate-on-scroll">
             <h3 className="text-xl font-bold mb-2">
               Quer resultados assim?
             </h3>
@@ -321,11 +321,11 @@ export default async function BlogPostPage({
       {/* Related posts */}
       {related.length > 0 && (
         <section className="relative py-16 border-t border-white/[0.06]">
-          <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-2xl font-bold mb-8 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 className="text-xl sm:text-2xl font-bold mb-8 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
               Artigos relacionados
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
               {related.map((relatedPost, index) => (
                 <div
                   key={relatedPost.slug}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Check, Minus, ArrowRight, HelpCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { CTAButton } from "@/components/forms/cta-button";
 import { Accordion } from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
@@ -201,15 +201,14 @@ export default function PacotesPage() {
                   ))}
                 </ul>
 
-                <Button
+                <CTAButton
                   variant={pkg.highlighted ? "primary-glow" : "ghost"}
                   size="md"
-                  href="/diagnostico"
                   className="w-full"
                 >
                   Começar agora
                   <ArrowRight className="w-4 h-4" />
-                </Button>
+                </CTAButton>
               </div>
             </div>
           ))}
@@ -319,10 +318,10 @@ export default function PacotesPage() {
               Agende um diagnóstico gratuito. Em 30 minutos, identificamos o que
               faz sentido pro seu momento.
             </p>
-            <Button variant="primary-glow" size="lg" href="/diagnostico">
+            <CTAButton variant="primary-glow" size="lg">
               Agendar diagnóstico gratuito
               <ArrowRight className="w-4 h-4" />
-            </Button>
+            </CTAButton>
           </div>
         </div>
       </section>

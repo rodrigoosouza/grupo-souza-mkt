@@ -40,7 +40,7 @@ export function BlogList({ page, category }: BlogListProps) {
         <div className="absolute inset-0 dot-grid opacity-30" />
         <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-emerald-900/20 blur-[100px] rounded-full" />
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <div className="[animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-emerald-400 text-sm font-medium mb-6">
               <BookOpen className="w-4 h-4" />
@@ -75,7 +75,7 @@ export function BlogList({ page, category }: BlogListProps) {
 
       {/* Filtros + posts */}
       <section className="relative py-16">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           {/* Category filter */}
           <div className="flex flex-wrap gap-3 justify-center mb-12 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
             <Link

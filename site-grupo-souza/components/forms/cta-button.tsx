@@ -29,9 +29,9 @@ const variantStyles: Record<Variant, string> = {
 };
 
 const sizeStyles: Record<Size, string> = {
-  sm: "px-4 py-2 text-xs",
-  md: "px-5 py-2.5 text-sm",
-  lg: "px-6 py-3 text-base",
+  sm: "px-4 py-2 text-xs min-h-[36px]",
+  md: "px-5 py-2.5 text-sm min-h-[40px]",
+  lg: "px-6 py-3 text-base min-h-[44px]",
 };
 
 export function CTAButton({

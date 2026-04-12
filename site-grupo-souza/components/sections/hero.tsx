@@ -16,7 +16,7 @@ export function Hero() {
       <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[900px] h-[700px] bg-emerald-500/[0.06] blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-emerald-900/[0.08] blur-[120px] rounded-full pointer-events-none" />
 
-      <main className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8 lg:pt-24 max-w-7xl mx-auto pt-16 px-6 pb-20 relative items-center">
+      <main className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8 lg:pt-24 max-w-7xl mx-auto pt-16 px-4 sm:px-6 pb-20 relative items-center">
         {/* Left Column */}
         <div className="lg:col-span-7 flex flex-col relative items-start z-10">
           {/* Tag */}
@@ -62,7 +62,7 @@ export function Hero() {
 
         {/* Right Column (Electric Card - Dashboard Mockup) */}
         <div className="lg:col-span-5 flex lg:justify-end lg:mt-0 mt-0 relative justify-center z-10 animate-entry delay-500">
-          <div className="relative w-[360px] bg-neutral-900 rounded-[32px] p-[2px] electric-card overflow-hidden">
+          <div className="relative w-full max-w-[360px] bg-neutral-900 rounded-[32px] p-[2px] electric-card overflow-hidden">
             {/* Glowing Border Gradient */}
             <div className="absolute inset-0 bg-gradient-to-b from-emerald-300 via-emerald-500 to-transparent opacity-80 z-0" />
 

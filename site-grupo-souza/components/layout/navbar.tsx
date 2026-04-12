@@ -61,7 +61,7 @@ export function Navbar() {
   return (
     <>
       <nav className="sticky top-0 z-50 bg-black/60 backdrop-blur-2xl border-b border-white/[0.06]">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex items-center justify-between">
           {/* Logo */}
           <Logo size={32} />
 
