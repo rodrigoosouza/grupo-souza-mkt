@@ -7,21 +7,22 @@ import {
   LayoutTemplate,
   BarChart3,
   BrainCircuit,
-  Target,
 } from "lucide-react";
 
 const RODRIGO_SKILLS = [
-  { icon: Megaphone, label: "Tráfego Pago", desc: "Meta Ads & Google Ads" },
-  { icon: ScanSearch, label: "Tracking Avançado", desc: "GTM, GA4, Pixels, Conversões Offline" },
+  { icon: Megaphone, label: "Growth Marketing", desc: "Meta Ads, Google Ads, funil completo" },
+  { icon: Workflow, label: "Automações", desc: "n8n, Make, fluxos de nutrição" },
+  { icon: LayoutTemplate, label: "CRO de Página", desc: "Landing pages que convertem de verdade" },
+  { icon: BrainCircuit, label: "Inteligência Artificial", desc: "IA aplicada ao funil de aquisição" },
+  { icon: ScanSearch, label: "Tracking Avançado", desc: "GTM, GA4, conversões offline" },
   { icon: Code2, label: "Desenvolvimento Web", desc: "Next.js, TypeScript, Supabase" },
-  { icon: BarChart3, label: "Dashboards", desc: "Métricas de funil em tempo real" },
 ];
 
 const MATHEUS_SKILLS = [
-  { icon: Target, label: "Marketing Estratégico", desc: "Posicionamento, ofertas, copy de conversão" },
+  { icon: Megaphone, label: "Growth Marketing", desc: "Meta Ads, Google Ads, funil completo" },
+  { icon: BarChart3, label: "Dashboards", desc: "Métricas de funil em tempo real" },
   { icon: Workflow, label: "Automações", desc: "n8n, Make, fluxos de nutrição" },
-  { icon: BrainCircuit, label: "Inteligência Artificial", desc: "Agentes, prompts, IA aplicada ao funil" },
-  { icon: LayoutTemplate, label: "Landing Pages & CRO", desc: "Páginas que convertem, não que enfeitam" },
+  { icon: BrainCircuit, label: "Inteligência Artificial", desc: "IA aplicada ao funil de aquisição" },
 ];
 
 export function Founder() {
@@ -75,15 +76,15 @@ export function Founder() {
                   Rodrigo Souza
                 </h3>
                 <p className="text-xs text-emerald-400 font-mono">
-                  Sócio & Growth Engineer
+                  Sócio · Growth Marketer
                 </p>
               </div>
             </div>
 
             <p className="text-sm text-neutral-400 leading-relaxed mb-6">
-              Combina tráfego pago, desenvolvimento web e dados pra construir o
-              sistema de aquisição completo — do anúncio ao dashboard, com tracking
-              em cada etapa.
+              Toca o funil inteiro — do tráfego ao desenvolvimento da página, do
+              tracking à automação. Combina growth, código e IA pra construir
+              sistema de aquisição que funciona.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -121,15 +122,15 @@ export function Founder() {
                   Matheus Souza
                 </h3>
                 <p className="text-xs text-emerald-400 font-mono">
-                  Sócio & Marketing + IA
+                  Sócio · Growth Marketer
                 </p>
               </div>
             </div>
 
             <p className="text-sm text-neutral-400 leading-relaxed mb-6">
-              Especialista em marketing, automações e inteligência artificial.
-              Desenha as ofertas, os fluxos de nutrição e os agentes de IA que
-              transformam lead em venda — sem inflar a operação.
+              Toca growth, automação e IA — desenha os fluxos, monitora os
+              dashboards e usa inteligência artificial pra acelerar o funil sem
+              inflar a operação.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">

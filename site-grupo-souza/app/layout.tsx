@@ -119,7 +119,7 @@ export default function RootLayout({
                 {
                   "@type": "Person",
                   "name": "Rodrigo Souza",
-                  "jobTitle": "Sócio & Growth Engineer",
+                  "jobTitle": "Sócio · Growth Marketer",
                   "url": "https://gruposouza.com.br/sobre",
                   "sameAs": [
                     "https://www.instagram.com/rodrigosouzadomarketing/",
@@ -129,7 +129,7 @@ export default function RootLayout({
                 {
                   "@type": "Person",
                   "name": "Matheus Souza",
-                  "jobTitle": "Sócio · Marketing, Automações e IA",
+                  "jobTitle": "Sócio · Growth Marketer",
                   "url": "https://gruposouza.com.br/sobre"
                 }
               ],

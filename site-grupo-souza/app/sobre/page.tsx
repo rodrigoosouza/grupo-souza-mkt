@@ -7,9 +7,7 @@ import {
   Workflow,
   LayoutTemplate,
   BarChart3,
-  Video,
   BrainCircuit,
-  Database,
   Target,
   LineChart,
   Shield,
@@ -28,19 +26,19 @@ export const metadata: Metadata = {
 };
 
 const RODRIGO_SKILLS = [
-  { icon: Megaphone, label: "Tráfego Pago (Meta/Google Ads)" },
+  { icon: Megaphone, label: "Growth Marketing" },
+  { icon: Workflow, label: "Automações (n8n/Make)" },
+  { icon: LayoutTemplate, label: "CRO de Página" },
+  { icon: BrainCircuit, label: "Inteligência Artificial" },
   { icon: ScanSearch, label: "Tracking Avançado (GTM/GA4)" },
-  { icon: Code2, label: "Desenvolvimento Web (Next.js/TypeScript)" },
-  { icon: BarChart3, label: "Dashboards de Performance" },
-  { icon: Database, label: "CRM e Estruturação de Funil" },
-  { icon: Video, label: "Produção de Vídeo por IA" },
+  { icon: Code2, label: "Desenvolvimento Web (Next.js/TS)" },
 ];
 
 const MATHEUS_SKILLS = [
-  { icon: Target, label: "Marketing Estratégico" },
-  { icon: Workflow, label: "Automação (n8n/Make)" },
-  { icon: BrainCircuit, label: "Inteligência Artificial Aplicada" },
-  { icon: LayoutTemplate, label: "Landing Pages com CRO" },
+  { icon: Megaphone, label: "Growth Marketing" },
+  { icon: BarChart3, label: "Dashboards de Performance" },
+  { icon: Workflow, label: "Automações (n8n/Make)" },
+  { icon: BrainCircuit, label: "Inteligência Artificial" },
 ];
 
 const VALUES = [
@@ -162,15 +160,15 @@ export default function SobrePage() {
                   Rodrigo Souza
                 </h3>
                 <p className="text-sm text-emerald-400 font-mono">
-                  Sócio & Growth Engineer
+                  Sócio · Growth Marketer
                 </p>
               </div>
             </div>
 
             <p className="text-neutral-400 leading-relaxed mb-6">
-              Combina tráfego pago, desenvolvimento web e dados pra construir o
-              sistema de aquisição completo — do anúncio ao dashboard, com
-              tracking em cada etapa.
+              Toca o funil inteiro — do tráfego ao desenvolvimento da página, do
+              tracking à automação. Combina growth, código e IA pra construir
+              sistema de aquisição que funciona.
             </p>
 
             <h4 className="text-xs font-bold text-white mb-4 uppercase tracking-wider">
@@ -208,15 +206,15 @@ export default function SobrePage() {
                   Matheus Souza
                 </h3>
                 <p className="text-sm text-emerald-400 font-mono">
-                  Sócio & Marketing + IA
+                  Sócio · Growth Marketer
                 </p>
               </div>
             </div>
 
             <p className="text-neutral-400 leading-relaxed mb-6">
-              Especialista em marketing, automações e inteligência artificial.
-              Desenha as ofertas, os fluxos de nutrição e os agentes de IA que
-              transformam lead em venda — sem inflar a operação.
+              Toca growth, automação e IA — desenha os fluxos, monitora os
+              dashboards e usa inteligência artificial pra acelerar o funil sem
+              inflar a operação.
             </p>
 
             <h4 className="text-xs font-bold text-white mb-4 uppercase tracking-wider">
