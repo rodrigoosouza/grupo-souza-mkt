@@ -115,15 +115,24 @@ export default function RootLayout({
               "url": "https://gruposouza.com.br",
               "description": "Agência de growth marketing e infraestrutura de aquisição. Tráfego pago, tracking avançado, landing pages, automação, CRM, dashboards e AIEO/GEO.",
               "foundingDate": "2025",
-              "founder": {
-                "@type": "Person",
-                "name": "Rodrigo Souza",
-                "url": "https://gruposouza.com.br/sobre",
-                "sameAs": [
-                  "https://www.instagram.com/rodrigosouzadomarketing/",
-                  "https://www.linkedin.com/in/rodrigosouzamkt"
-                ]
-              },
+              "founder": [
+                {
+                  "@type": "Person",
+                  "name": "Rodrigo Souza",
+                  "jobTitle": "Sócio & Growth Engineer",
+                  "url": "https://gruposouza.com.br/sobre",
+                  "sameAs": [
+                    "https://www.instagram.com/rodrigosouzadomarketing/",
+                    "https://www.linkedin.com/in/rodrigosouzamkt"
+                  ]
+                },
+                {
+                  "@type": "Person",
+                  "name": "Matheus Souza",
+                  "jobTitle": "Sócio · Marketing, Automações e IA",
+                  "url": "https://gruposouza.com.br/sobre"
+                }
+              ],
               "sameAs": [
                 "https://www.instagram.com/gruposouzamkt/",
                 "https://wa.me/5519996022561"

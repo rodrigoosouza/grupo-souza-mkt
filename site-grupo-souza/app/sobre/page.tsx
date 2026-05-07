@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   Megaphone,
   ScanSearch,
@@ -23,19 +24,23 @@ import { CTAButton } from "@/components/forms/cta-button";
 export const metadata: Metadata = {
   title: "Sobre",
   description:
-    "Conheça o Grupo Souza MKT e Rodrigo Souza, fundador. Growth marketing e engenharia de aquisição para empresas em crescimento.",
+    "Conheça o Grupo Souza MKT, Rodrigo Souza e Matheus Souza, sócios. Growth marketing, automações e IA para empresas em crescimento.",
 };
 
-const SKILLS = [
+const RODRIGO_SKILLS = [
   { icon: Megaphone, label: "Tráfego Pago (Meta/Google Ads)" },
   { icon: ScanSearch, label: "Tracking Avançado (GTM/GA4)" },
   { icon: Code2, label: "Desenvolvimento Web (Next.js/TypeScript)" },
-  { icon: Workflow, label: "Automação (n8n/Make)" },
-  { icon: Database, label: "CRM e Estruturação de Funil" },
-  { icon: LayoutTemplate, label: "Landing Pages com CRO" },
   { icon: BarChart3, label: "Dashboards de Performance" },
+  { icon: Database, label: "CRM e Estruturação de Funil" },
   { icon: Video, label: "Produção de Vídeo por IA" },
-  { icon: BrainCircuit, label: "AIEO/GEO (Busca Generativa)" },
+];
+
+const MATHEUS_SKILLS = [
+  { icon: Target, label: "Marketing Estratégico" },
+  { icon: Workflow, label: "Automação (n8n/Make)" },
+  { icon: BrainCircuit, label: "Inteligência Artificial Aplicada" },
+  { icon: LayoutTemplate, label: "Landing Pages com CRO" },
 ];
 
 const VALUES = [
@@ -114,7 +119,7 @@ export default function SobrePage() {
         <div className="h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
       </section>
 
-      {/* Fundador */}
+      {/* Sócios */}
       <section
         className="[animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll bg-gradient-to-tr from-white/0 via-white/10 to-white/0 max-w-7xl rounded-3xl mt-24 mx-2.5 lg:mx-auto mb-24 p-8 md:p-10 relative"
         style={{
@@ -125,43 +130,59 @@ export default function SobrePage() {
           "--border-radius-before": "24px",
         }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          <div>
-            <div className="text-[11px] font-bold text-emerald-500 uppercase tracking-[3px] mb-4 font-mono">
-              Fundador
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-[-1.5px] mb-4">
-              Rodrigo Souza
-            </h2>
-            <p className="text-neutral-400 leading-relaxed mb-6">
-              Growth marketer e engenheiro de aquisição. Combina marketing de
-              performance com desenvolvimento de software pra construir sistemas
-              de aquisição completos — do anúncio ao CRM, com dados em cada
-              etapa.
-            </p>
-            <p className="text-neutral-400 leading-relaxed mb-8">
-              Diferente de agências tradicionais que dependem de equipes grandes
-              e processos lentos, o Grupo Souza usa tecnologia, automação e IA
-              pra entregar com a eficiência de uma equipe 10x maior. Poucos
-              clientes, resultado máximo.
-            </p>
-            <CTAButton variant="ghost" size="md">
-              Agendar conversa
-              <ArrowRight className="w-4 h-4" />
-            </CTAButton>
+        <div className="mb-12 max-w-2xl">
+          <div className="text-[11px] font-bold text-emerald-500 uppercase tracking-[3px] mb-4 font-mono">
+            Sócios
           </div>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-[-1.5px] mb-4">
+            Quem está por trás
+          </h2>
+          <p className="text-neutral-400 leading-relaxed">
+            Dois sócios com expertise complementar: tráfego, código e dados de um
+            lado; marketing, automação e IA do outro. Sem terceirizar o que
+            importa.
+          </p>
+        </div>
 
-          <div>
-            <h3 className="text-sm font-bold text-white mb-6 uppercase tracking-wider">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          {/* Rodrigo */}
+          <div className="rounded-2xl border border-white/[0.06] bg-black/20 p-6 md:p-8">
+            <div className="flex items-center gap-5 mb-6">
+              <div className="w-24 h-24 rounded-2xl overflow-hidden border border-emerald-500/20 shadow-[0_0_30px_rgba(16,185,129,0.15)] relative flex-shrink-0">
+                <Image
+                  src="/rodrigo-souza.png"
+                  alt="Rodrigo Souza"
+                  fill
+                  sizes="96px"
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white tracking-[-0.5px]">
+                  Rodrigo Souza
+                </h3>
+                <p className="text-sm text-emerald-400 font-mono">
+                  Sócio & Growth Engineer
+                </p>
+              </div>
+            </div>
+
+            <p className="text-neutral-400 leading-relaxed mb-6">
+              Combina tráfego pago, desenvolvimento web e dados pra construir o
+              sistema de aquisição completo — do anúncio ao dashboard, com
+              tracking em cada etapa.
+            </p>
+
+            <h4 className="text-xs font-bold text-white mb-4 uppercase tracking-wider">
               Domínios
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {SKILLS.map((skill) => (
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              {RODRIGO_SKILLS.map((skill) => (
                 <div
                   key={skill.label}
-                  className="flex items-center gap-3 p-3 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-emerald-500/[0.02] hover:border-emerald-500/15 transition-all duration-300 group"
+                  className="flex items-center gap-3 p-2.5 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-emerald-500/[0.02] hover:border-emerald-500/15 transition-all duration-300 group"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.1)] group-hover:border-emerald-500/40 transition-all duration-500">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0 group-hover:border-emerald-500/40 transition-all duration-500">
                     <skill.icon className="w-4 h-4 text-emerald-400" />
                   </div>
                   <span className="text-xs text-neutral-300">{skill.label}</span>
@@ -169,6 +190,59 @@ export default function SobrePage() {
               ))}
             </div>
           </div>
+
+          {/* Matheus */}
+          <div className="rounded-2xl border border-white/[0.06] bg-black/20 p-6 md:p-8">
+            <div className="flex items-center gap-5 mb-6">
+              <div className="w-24 h-24 rounded-2xl overflow-hidden border border-emerald-500/20 shadow-[0_0_30px_rgba(16,185,129,0.15)] relative flex-shrink-0">
+                <Image
+                  src="/matheus-souza.png"
+                  alt="Matheus Souza"
+                  fill
+                  sizes="96px"
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white tracking-[-0.5px]">
+                  Matheus Souza
+                </h3>
+                <p className="text-sm text-emerald-400 font-mono">
+                  Sócio & Marketing + IA
+                </p>
+              </div>
+            </div>
+
+            <p className="text-neutral-400 leading-relaxed mb-6">
+              Especialista em marketing, automações e inteligência artificial.
+              Desenha as ofertas, os fluxos de nutrição e os agentes de IA que
+              transformam lead em venda — sem inflar a operação.
+            </p>
+
+            <h4 className="text-xs font-bold text-white mb-4 uppercase tracking-wider">
+              Domínios
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              {MATHEUS_SKILLS.map((skill) => (
+                <div
+                  key={skill.label}
+                  className="flex items-center gap-3 p-2.5 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-emerald-500/[0.02] hover:border-emerald-500/15 transition-all duration-300 group"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0 group-hover:border-emerald-500/40 transition-all duration-500">
+                    <skill.icon className="w-4 h-4 text-emerald-400" />
+                  </div>
+                  <span className="text-xs text-neutral-300">{skill.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <CTAButton variant="ghost" size="md">
+            Agendar conversa
+            <ArrowRight className="w-4 h-4" />
+          </CTAButton>
         </div>
       </section>
 
